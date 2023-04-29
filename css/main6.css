@@ -1,0 +1,268 @@
+.slide_start {
+  z-index: 0;
+}
+
+.lnb {
+  z-index: 1;
+}
+
+.container {
+  max-width: 95.625rem;
+  margin: 0 auto;
+}
+/* -----------------------------------notice */
+.notice {
+  width: 100%;
+  height: 55px;
+  background: #3a3936;
+}
+
+.notice_wrapper {
+  margin: 0 auto;
+}
+.notice .notice_content {
+  flex-wrap: nowrap;
+  width: 30%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.notice .notice_content a {
+  color: #fff;
+  font-size: 0.875rem;
+}
+.notice .notice_content a i {
+  margin-right: 10px;
+}
+/* ------------------------------------subNav */
+.subNav {
+  margin-top: 5rem;
+}
+/* ------------------------------------slide */
+
+.imgRight {
+  justify-content: center;
+  text-align: center;
+}
+
+.slide-wrapper .imgRight {
+  width: 332px;
+  height: 491px;
+  background-color: #f6dd85;
+}
+.slide-wrapper {
+  margin: 36px 155px 0 331px;
+}
+/* 이게 어떻게 작동되는건가요?? */
+.slide-wrapper .imgWrap {
+  float: left;
+}
+.slide-wrapper .imgRight {
+  float: right;
+}
+
+.imgTit {
+  padding: 50px 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.imgDesc {
+  padding-bottom: 90px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.imgPrice {
+  font-weight: 400;
+  font-size: 40px;
+  padding-bottom: 60px;
+}
+
+/* 버튼 */
+.controls i {
+  font-size: 24px;
+  color: #333;
+}
+
+.prev {
+  left: 84%;
+}
+
+.next {
+  left: 88%;
+}
+
+/* ----------------------------------------검색창 */
+.gnb_search {
+  display: inline-flex;
+  justify-content: flex-end;
+  vertical-align: bottom;
+  /* padding-top: 45px; */
+  position: relative;
+  width: 50%;
+  margin-left: auto;
+}
+
+.icon_search {
+  width: 7%;
+  transition: 0.3s all;
+}
+
+/* 클릭 후 검색창 */
+.gnb_search::before {
+  left: 100%;
+  right: 0;
+  transition: 0.3s all;
+  content: "";
+  position: absolute;
+  border-radius: 24px;
+  height: 56px;
+  background: #f2f2f2;
+  z-index: -1;
+}
+.gnb_search.on::before {
+  left: 0;
+}
+
+.gnb_search input {
+  outline: none;
+  width: 100%;
+  display: block;
+  border: none;
+  background: none;
+  margin: 17px 12px;
+}
+
+.gnb_search > input:before {
+  /* left: 0; */
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  transition: 0.3s all;
+  height: 48px;
+  background: #f2f2f2;
+}
+
+/* 돋보기 */
+.magn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.magn::before {
+  content: "";
+  display: block;
+  width: 1.563rem;
+  height: 1.563rem;
+  background: url(../img/svg/magnifying-glass-solid.svg) no-repeat;
+}
+
+/* ---------------------------------------------aside */
+.gnb_aside {
+  padding-top: 35px;
+  position: fixed;
+  margin-left: 717px;
+  left: 50%;
+  width: 4.25rem;
+  height: 25.563rem;
+  z-index: 100;
+}
+
+.icon {
+  display: block;
+  margin-bottom: 40px;
+  height: 49px;
+  width: 59px;
+  margin-left: auto;
+  text-align: center;
+}
+.login:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/user-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+}
+
+.cart:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/basket-shopping-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+}
+
+.chat:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/comment-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+}
+
+.cs:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/headset-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+}
+
+.store:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/map-location-dot-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+}
+
+.Top_span {
+  top: 5px;
+}
+
+/* -----------------------------------------------section 01 */
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 3.125rem;
+  margin-bottom: 50px;
+  margin-top: 200px;
+}
+
+.best_desc {
+  text-align: center;
+}
+
+.bestList {
+  width: 450px;
+}
+
+.bestList a > img {
+  width: 28.125rem;
+  /* 450px */
+  height: 28.125rem;
+}
+
+.yellow_Btn {
+  position: absolute;
+  z-index: 10;
+  right: 75.4%;
+}
+.best_desc {
+  width: 450px;
+  height: 155px;
+  background: #fff;
+  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
+}

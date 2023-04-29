@@ -1,0 +1,340 @@
+.container {
+    width: 95.625rem;
+    margin: 20px 12.188rem 0;
+}
+
+.inner {
+    margin: 0 auto;
+}
+
+header {
+    height: 716px;
+}
+
+/* ------------------------------------slide -----*/
+
+.imgRight {
+    justify-content: center;
+    text-align: center;
+}
+
+.slide-wrapper .imgRight {
+    width: 332px;
+    height: 491px;
+    background-color: #f6dd85;
+}
+.slide-wrapper {
+    /* display: flex; */
+    margin: 133px 155px 0 331px;
+}
+/* 이게 어떻게 작동되는건가요?? */
+.slide-wrapper .imgWrap {
+    float: left;
+}
+.slide-wrapper .imgRight {
+    float: right;
+}
+
+.imgTit {
+    padding: 50px 0;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.imgDesc {
+    padding-bottom: 90px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.imgPrice {
+    font-weight: 400;
+    font-size: 40px;
+    padding-bottom: 60px;
+}
+.red_Btn {
+    background-color: #b73131;
+    color: #fff;
+    width: 200px;
+    height: 60px;
+    border: none;
+}
+
+/* 버튼 */
+.controls i {
+    font-size: 24px;
+    color: #333;
+}
+
+.prev {
+    left: 84%;
+}
+
+.next {
+    left: 88%;
+}
+
+/* -------------------------------------gnb----- */
+.menu_btn {
+    background: transparent;
+    border: none;
+    padding: 12px 0 0 0;
+}
+
+/* .category_list {
+    display: none;
+} */
+
+.menu_img {
+    width: 30px;
+    height: 25px;
+}
+
+h1 {
+    width: 220px;
+    height: 38px;
+    background: url(../img/logo.png) 0 0 no-repeat;
+    font-size: 0;
+    line-height: 0;
+}
+
+.gnb_btns {
+    height: 38px;
+}
+/* ------------------------------------category */
+
+.home {
+    padding-left: 25px;
+}
+
+.category_list {
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid #333;
+}
+
+.category_list li {
+    display: flex;
+    position: relative;
+    line-height: 55px;
+    padding: 0 20px;
+}
+
+.category_list li h4 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* 글자 밑라인 dep01*/
+.category_list > li h4 {
+    position: relative;
+}
+.category_list > li h4::after {
+    /* display: inline-block 안해도 잘 되는 이유?? */
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 0%;
+    width: 6.25rem;
+    height: 2px;
+    transform: scaleX(0);
+    background-color: var(--B);
+    transition: 0.3s ease-in-out;
+}
+.category_list > li > h4:hover::after {
+    transform: scaleX(1);
+}
+.category_list > li > h4:hover {
+    font-weight: 600;
+}
+.catebox_1,
+.catebox_2 {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    border: 1px solid #bab2b2;
+    text-align: left;
+}
+/* dep 02, 03*/
+/* .catebox_1 >.catebox_2 li::after 
+이건 안되는 이유 */
+.catebox_1 > li span::after,
+.catebox_2 li::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    width: 5.25rem;
+    height: 2px;
+    transform: scaleX(0);
+    background-color: var(--B);
+    transition: all 0.3s ease-in-out;
+}
+.catebox_1 > li span:hover::after,
+.catebox_2 li:hover::after {
+    transform: scaleX(1);
+}
+
+/* 메뉴박스 너비 지정 */
+/* dep02 */
+.catebox_1 span {
+    width: 155px;
+}
+.catebox_2 {
+    width: 144px;
+}
+.catebox_1 > li > ul {
+    width: 144px;
+}
+.lnb {
+    margin-top: 20px;
+    width: 180px;
+}
+.category_list ul {
+    position: absolute;
+    left: 100.5%;
+    top: -1px;
+    display: none;
+    background-color: #f6dd85;
+}
+.category_list > li:hover > ul {
+    display: block;
+}
+.catebox_1 > li:hover ul {
+    display: block;
+}
+.category_list > ul > ul {
+    background-color: #ededed;
+}
+
+/* ----------------------------------------검색창 */
+.gnb_search {
+    display: flex;
+    justify-content: flex-end;
+    vertical-align: bottom;
+    padding-top: 45px;
+}
+
+.icon_search {
+}
+
+.icon_search {
+    height: 40px;
+    width: 52px;
+    /* left: 30px; */
+    /* min-width: 600px; */
+    /* border-radius: 20px; */
+    transition: 0.3s all;
+}
+
+.gnb_search input {
+    /* display: none; */
+    width: 20%;
+    border-radius: 20px;
+    /* font-size: 14px; */
+    /* background: transparent; */
+    /* outline: none; */
+}
+
+.gnb_search input:before {
+    /* left: 0; */
+    content: "";
+    position: absolute;
+    border-radius: 20px;
+    transition: 0.3s all;
+    height: 48px;
+    background: #f2f2f2;
+}
+
+/* 돋보기 */
+.magn {
+    border: none;
+    background: transparent;
+}
+
+.magn::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url(../img/svg/magnifying-glass-solid.svg) no-repeat;
+}
+
+/* ---------------------------------------------aside */
+.gnb_aside {
+    padding-top: 35px;
+    position: fixed;
+    margin-left: 717px;
+    left: 50%;
+    width: 4.25rem;
+    height: 25.563rem;
+}
+
+.icon {
+    display: block;
+    margin-bottom: 40px;
+    height: 49px;
+    width: 59px;
+    margin-left: auto;
+    text-align: center;
+}
+.login:before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 30px;
+    background: url(../img/svg/user-solid.svg) 0 0 no-repeat;
+    margin: 0 auto;
+}
+
+.cart:before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 30px;
+    background: url(../img/svg/basket-shopping-solid.svg) 0 0 no-repeat;
+    margin: 0 auto;
+}
+
+.chat:before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 30px;
+    background: url(../img/svg/comment-solid.svg) 0 0 no-repeat;
+    margin: 0 auto;
+}
+
+.cs:before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 30px;
+    background: url(../img/svg/headset-solid.svg) 0 0 no-repeat;
+    margin: 0 auto;
+}
+
+.store:before {
+    content: "";
+    display: block;
+    width: 26px;
+    height: 30px;
+    background: url(../img/svg/map-location-dot-solid.svg) 0 0 no-repeat;
+    margin: 0 auto;
+}
+
+.Top_span {
+    top: 5px;
+}
+
+/* --------------------------------------------section 01 */
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 3.125rem;
+    /* top: 12.5rem;
+  left: 27.25rem;
+  position: absolute; */
+}

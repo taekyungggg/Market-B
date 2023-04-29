@@ -1,0 +1,373 @@
+.slide_start {
+  z-index: 0;
+}
+
+.lnb {
+  z-index: 1;
+}
+
+.container {
+  max-width: 95.625rem;
+  margin: 0 auto;
+}
+/* -----------------------------------notice */
+.notice {
+  width: 100%;
+  height: 55px;
+  background: #3a3936;
+}
+
+.notice_wrapper {
+  margin: 0 auto;
+}
+.notice .notice_content {
+  flex-wrap: nowrap;
+  width: 30%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.notice .notice_content a {
+  color: #fff;
+  font-size: 0.875rem;
+}
+.notice .notice_content a i {
+  margin-right: 10px;
+}
+/* ------------------------------------subNav */
+.subNav {
+  margin-top: 5rem;
+}
+.subNav .subNav_content a {
+  padding: 10px;
+}
+.subNav_content {
+  width: 100%;
+  display: grid;
+  grid-template: 40px / repeat(8, 1fr);
+  /* grid-column-gap: 0.875rem; */
+  text-align: center;
+  color: var(--B);
+}
+.subNav_content::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  background: #f2f2f2;
+  width: 1400px;
+  height: 2px;
+  top: 65%;
+  z-index: -2;
+}
+
+/* ----------------------------------------검색창 */
+.gnb_search {
+  display: inline-flex;
+  justify-content: flex-end;
+  vertical-align: bottom;
+  /* padding-top: 45px; */
+  position: relative;
+  width: 50%;
+  margin-left: auto;
+}
+
+.icon_search {
+  width: 10%;
+  transition: 0.3s all;
+}
+
+/* 클릭 후 검색창 */
+.gnb_search::before {
+  left: 100%;
+  right: 0;
+  transition: 0.3s all;
+  content: "";
+  position: absolute;
+  border-radius: 24px;
+  height: 56px;
+  background: #f2f2f2;
+  z-index: -1;
+}
+.gnb_search.on::before {
+  left: 0;
+}
+
+.gnb_search input {
+  outline: none;
+  width: 100%;
+  display: block;
+  border: none;
+  background: none;
+  margin: 17px 12px;
+}
+
+.gnb_search > input:before {
+  /* left: 0; */
+  content: "";
+  position: absolute;
+  border-radius: 20px;
+  transition: 0.3s all;
+  height: 48px;
+  background: #f2f2f2;
+}
+
+/* 돋보기 */
+.magn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  top: 8%;
+  right: 2%;
+}
+.magn > span {
+  color: var(--B);
+}
+.magn::before {
+  content: "";
+  display: block;
+  width: 1.563rem;
+  height: 1.563rem;
+  background: url(../img/svg/magnifying-glass-solid.svg) no-repeat;
+  color: var(--B);
+}
+
+/* ------------------------------------slide */
+.imgRight {
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.slide-wrapper .imgRight {
+  height: 65vh;
+  width: 18vw;
+  background-color: #f6dd85;
+  float: left;
+}
+.slide-wrapper {
+  margin: 36px 155px 0 331px;
+}
+.slide-wrapper .imgWrap {
+  float: left;
+}
+.slide-wrapper .imgWrap > img {
+  height: 65vh;
+  width: 45vw;
+}
+
+.imgTit {
+  height: 21%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+}
+
+.imgDesc {
+  height: 21%;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.imgPrice {
+  font-weight: 400;
+  font-size: 40px;
+  height: 18%;
+}
+
+/* 슬라이드 버튼 */
+.controls {
+  width: 65%;
+  margin-top: 0.938rem;
+}
+.controls i {
+  font-size: 24px;
+  color: #333;
+}
+
+.prev {
+  left: 115%;
+}
+
+.next {
+  left: 123%;
+}
+
+/* ---------------------------------------------aside */
+.gnb_aside {
+  padding-top: 35px;
+  position: fixed;
+
+  left: 87%;
+
+  z-index: 100;
+}
+
+.icon {
+  display: block;
+  margin-bottom: 40px;
+  /* margin-left: auto; */
+  text-align: center;
+}
+.icon a span {
+  color: var(--B);
+}
+.login:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/user-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+  color: var(--B);
+}
+.join:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/pen-nib-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+  color: var(--B);
+}
+
+.cart:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/basket-shopping-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+  color: var(--B);
+}
+
+.chat:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/comment-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+  color: var(--B);
+}
+
+.cs:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/headset-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+  color: var(--B);
+}
+
+.store:before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 30px;
+  background: url(../img/svg/map-location-dot-solid.svg) 0 0 no-repeat;
+  margin: 0 auto;
+  color: var(--B);
+}
+
+.Top_span {
+  top: 5px;
+}
+
+/* -----------------------------------------------section 01 */
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 3.125rem;
+  margin-bottom: 50px;
+  margin-top: 200px;
+}
+h6 {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+.bestList .bestItem > button {
+  z-index: 10;
+  right: 0%;
+  font-size: 20px;
+}
+.best_wrapper {
+  gap: 1.875rem;
+}
+
+.best_desc {
+  text-align: center;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
+}
+.best_desc .etc {
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+.best_desc .etc_num {
+  width: 15%;
+}
+.best_desc .cart_like_BtnWrapper {
+  width: 30%;
+  font-size: 1.25rem;
+}
+.best_desc .review_num {
+  width: 15%;
+}
+/* click하면 색상바뀜 */
+.fa-solid.fa-heart {
+  opacity: 0;
+  color: var(--R);
+  transition: opacity 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* .cart_like_BtnWrapper .cart_Btn i.on{
+  color: var(--R);
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+} */
+
+/* ---------------- */
+
+.best_desc .etc .star i {
+  color: var(--Y);
+}
+
+.bestList {
+  box-shadow: 4px 4px 3px #ededed;
+  width: 28.125rem;
+}
+
+.bestList a > img {
+  width: 28.125rem;
+  /* 450px */
+  height: 28.125rem;
+}
+
+.yellow_Btn {
+  position: absolute;
+  z-index: 10;
+  right: 75.4%;
+}
+
+.best .prev_btn,
+.next_btn {
+  color: var(--G);
+  font-size: 3.125rem;
+  z-index: 10;
+  top: 50%;
+}
+
+.best .next_btn {
+  right: 5%;
+}
+.best .prev_btn {
+  left: -5%;
+}
