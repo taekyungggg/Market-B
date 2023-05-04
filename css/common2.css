@@ -3,7 +3,6 @@
 @import url("reset.css");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap");
 @import url("slick.css");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 
 header {
   box-sizing: border-box;
@@ -105,8 +104,8 @@ h2 {
   width: 45px;
   height: 45px;
   color: #fff;
-  background-color: var(--Gg);
-  box-shadow: 1px 1px 5px var(--G);
+  background-color: var(--point_R);
+  box-shadow: 1px 1px 5px var(--font_B);
   display: block;
   text-align: center;
   line-height: 45px;
@@ -125,7 +124,7 @@ h2 {
   position: absolute;
   right: 0;
   bottom: 0;
-  background-color: var(--Y);
+  background-color: var(--point_Y);
   width: 130%;
   height: 0%;
   transform-origin: 100% 100%;
@@ -162,10 +161,6 @@ header {
 .F {
   display: flex;
 }
-.FC {
-  display: flex;
-  flex-direction: column;
-}
 .G {
   display: grid;
 }
@@ -191,7 +186,7 @@ header {
   height: 18.75rem;
 }
 
-/* ------------------------------------nav */
+/* ------------------------------------category */
 .home {
   padding-left: 25px;
 }
@@ -290,21 +285,16 @@ header {
   background-color: #f6dd85;
 }
 .category_list {
-  display: none;
-  /* opacity: 0; */
+  opacity: 0;
 }
 .category_list.on {
-  display: block;
-  /* opacity: 1; */
+  opacity: 1;
 }
-
-.category_list > li:hover > ul {
-  display: block;
-  /* opacity: 1; */
+.category_list > li.on > ul {
+  opacity: 1;
 }
-.catebox_1 > li:hover ul {
-  display: block;
-  /* opacity: 1; */
+.catebox_1 > li.on ul {
+  opacity: 1;
 }
 .category_list > ul > ul {
   background-color: #ededed;
@@ -343,53 +333,6 @@ h3 {
 .container {
   width: 95.625rem;
   margin: 0 auto;
-}
-/* common design */
-.rating .star i {
-  color: var(--Y);
-}
-.etc {
-  justify-content: center;
-  width: 100%;
-  align-items: center;
-}
-.etc_num {
-  width: 15%;
-}
-.review_num {
-  width: 15%;
-}
-.cart_wish_BtnWrapper {
-  width: 30%;
-}
-.cart_wish_BtnWrapper button {
-  width: 27%;
-}
-/* click event */
-.cart_wish_BtnWrapper .heart-img.active {
-  content: url("/img/svg/heart-red.png");
-  width: 27%;
-  /* color: var(--R); */
-}
-
-.wish_Btn .fa-regular.fa-heart {
-  color: black;
-  display: inline-block;
-}
-
-.wish_Btn.active .fa-regular.fa-heart {
-  display: none;
-  z-index: -10;
-}
-
-.wish_Btn .fa-solid.fa-heart {
-  color: red;
-  display: none;
-}
-
-.wish_Btn.active .fa-solid.fa-heart {
-  display: inline-block;
-  z-index: 10;
 }
 
 /* ---------------------------------------footer */

@@ -213,8 +213,8 @@
 }
 
 .slide_start {
-  margin-left: 6.875rem;
-  margin-top: 2.5rem;
+  margin-left: 9.875rem;
+  margin-top: 3.5rem;
 }
 
 /* ---------------------------------------------aside */
@@ -261,9 +261,6 @@ h6 {
   right: 0%;
   font-size: 20px;
 }
-/* .best .slider_wrapper ul {
-  gap: 1.875rem;
-} */
 
 .best_desc {
   text-align: center;
@@ -272,7 +269,7 @@ h6 {
   padding: 1.25rem;
   box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
 }
-.best_desc .etc {
+/* .best_desc .etc {
   justify-content: center;
   width: 100%;
   align-items: center;
@@ -287,28 +284,23 @@ h6 {
   width: 30%;
 }
 .best_desc button {
-  width: 2rem;
-  height: 2rem;
-  color: #f6dd85;
-}
+  width: 27%;
+} */
 /* click하면 색상바뀜 */
-.best_desc .cart_wish_BtnWrapper .wish_Btn ::after {
-  content: "";
+/* .best_desc .cart_wish_BtnWrapper .wish_Btn ::after {
+  content: "<i class=" fa-solid fa-heart "></i>";
   display: none;
   position: absolute;
   left: 100%;
   right: 0;
   z-index: -1;
-  background: url(../img/svg/heart-red.png) no-repeat;
-  width: 2rem;
-  height: 2rem;
 }
-.best_desc .cart_wish_BtnWrapper .wish_Btn.on::after {
+.best_desc .cart_wish_BtnWrapper .wish_Btn.click::after {
   display: inline-block;
 }
-.best_desc .cart_wish_BtnWrapper .wish_Btn.on {
+.best_desc .cart_wish_BtnWrapper .wish_Btn.click {
   display: none;
-}
+} */
 
 /* ----------------slide */
 .slider_wrapper {
@@ -335,10 +327,6 @@ h6 {
 }
 .slides li:last-child {
   gap: 0;
-}
-
-.best_desc .etc .star i {
-  color: var(--Y);
 }
 
 .bestList {

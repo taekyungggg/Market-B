@@ -81,12 +81,20 @@ body {
 .section02 .p_info .P_info2 {
   margin: 3.125rem 0;
 }
-.p_info .P_info1 {
-  width: 300px;
+
+.P_info1,
+.P_info1 .rating_wrap {
+  gap: 1rem;
 }
-.P_info1 .name,
-.price {
-  margin-bottom: 23px;
+.P_info1 .review {
+  gap: 1.875rem;
+  align-items: baseline;
+}
+
+.P_info1 .cart_wish_BtnWrapper button {
+  background: transparent;
+  border: none;
+  width: 2.75rem;
 }
 
 .P_info1 .name {
@@ -96,41 +104,31 @@ body {
   font-size: 1.875rem;
   font-weight: bold;
 }
-/* 별, 장바구니, 좋아요 버튼 */
-.P_info1 .review .rating {
-  margin-right: 0.625rem;
-}
-.P_info1 .review .review_num {
-  margin-right: 1.875rem;
-}
-.p_info > .P_info1 > .review > .cart_like_BtnWrapper button {
-  border: transparent;
-  background: none;
-}
+
 /* ------------------------------info2 */
-.P_info2 .color .c_grey {
-  margin-left: 1.563rem;
+.P_info2 {
+  gap: 1.25rem;
 }
 .section02 .p_info .P_info2 .c_img img {
   width: 6.25rem;
   height: 6.25rem;
+  gap: 0.625rem;
 }
 .P_info2 .c_img .img_grey {
   margin-right: 20px;
 }
 .P_info2 .color {
-  margin-bottom: 30px;
+  gap: 1.25rem;
 }
 .P_info2 .color .c_tit {
   font-size: 18px;
   font-weight: 500;
 }
-/* .p_info > .review > .cart_like_BtnWrapper > .cart_Btn{
 
-} */
 .P_info3 p {
   font-size: 20px;
   font-weight: 600;
+  gap: 0.625rem;
 }
 .P_info3 .buy .b_num,
 .p_sta,
@@ -139,26 +137,17 @@ body {
   justify-content: space-between;
 }
 
-/* flex에서 gap쓰려면??? */
-.P_info3 .buy .b_opt {
-  width: 8.5rem;
+.P_info3 {
+  gap: 2.5rem;
 }
+.P_info3 .buy .b_opt button {
+  align-items: center;
+}
+
 .P_info3 .buy {
-  /* width: 17.625rem; */
-  height: 142px;
-  flex-wrap: wrap;
-  gap: 25px 0;
+  gap: 1.25rem;
 }
-.P_info3 .buy .H {
-  height: 26px;
+
+.section03 button {
+  font-style: 1.875rem;
 }
-/* .p_info .y_Btn2 button {
-  height: 60px;
-  width: 280px;
-  background: var(--Y);
-  border-radius: 2px;
-}
-.p_info .y_Btn2 span {
-  font-size: 20px;
-  font-weight: bold;
-} */

@@ -1,5 +1,5 @@
-//winHeight: 브라우저 창의 높이값
-//innerHeight: 요소의 내부 높이=해당 요소의 내부 콘텐츠를 감싸는 상자의 높이
+//winHeight: 현재 보이는 브라우저 화면의 세로 길이
+//innerHeight: 요소의 내부 높이=현재 보이는 브라우저 화면의 세로 길이
 let winHeight = $("body, html").innerHeight();
 
 // nowScrollTop:브라우저 창의 스크롤 위치
@@ -15,8 +15,14 @@ let footerHeight = $("footer").innerHeight();
 
 //scrPercent: 스크롤바가 창에서 어느 위치에 있는지를 퍼센트로 계산한값
 let scrPercent =
-  //
-  //(현재 스크롤 위치 + 창의 전체 크기) / (-footer 요소의 높이)*100
+  /*
+  윈도우의 높이/문서의 전체높이: 윈도우 높이의 비율
+  (현재 스크롤 위치 + 사이트 전체 Height) / (현재 보이는 화면의 Height - footer 요소의 높이)*100
+  (현재 스크롤 양 + 윈도우의 높이/문서의 전체높이)*100 = 진행비율
+  ->
+  현재 스크롤 위치에서 전체 문서 높이 중 어느 정도를 스크롤했는지 비율로 표현할 수 있습니다. 
+  
+  */
   ((nowScrollTop + $(window).innerHeight()) / (winHeight - footerHeight)) * 100;
 
 //결론
@@ -35,7 +41,7 @@ function Common_resizeEvent() {
 //스크롤바가 움직일 때 호출될 함수를 정의합니다. btnTop 요소가 스크롤 위치에 따라 보이거나 숨겨지도록 조절하고, .percentage 요소의 높이값을 계산하여 스타일을 변경합니다.
 function btnTopPosition() {
   //현재 스크롤 위치>200 이상이면 on을, 아니면 on을 없애
-  if (nowScrollTop > 200) {
+  if (nowScrollTop > 300) {
     btnTop.addClass("on");
   } else {
     btnTop.removeClass("on");
