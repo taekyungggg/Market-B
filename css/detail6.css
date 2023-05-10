@@ -24,7 +24,8 @@ html {
 }
 
 main {
-  margin: 0 12.25rem;
+  margin: 12.5rem 0 12.5rem 12.25rem;
+  /* margin: 0 12.25rem; */
 }
 
 /* .gnb_btns {
@@ -43,28 +44,25 @@ body {
   font-weight: 300;
 }
 
-.img1,
-.img2 {
+/* -----------------------------slide */
+.imgWrapper li img {
   width: 31.25rem;
   height: 31.25rem;
 }
-
-/* -----------------------------slide */
-.slide img {
+#bx-pager a img {
   width: 5.875rem;
   height: 5.875rem;
-}
-.slide {
-  gap: 1.188rem;
-  justify-content: space-between;
-  padding: 30px;
+  /* gap: 1.188rem; */
+  /* justify-content: space-between;
+  padding: 30px; */
 }
 .imgWrapper {
   width: 31.25rem;
   gap: 3.125rem;
 }
+/* bx css */
 
-.section01 .zoom_Wrap .imgWrapper .slide_wrap i {
+/* .section01 .zoom_Wrap .imgWrapper .slide_wrap i {
   font-size: 28px;
   color: var(--Gg);
 }
@@ -78,7 +76,7 @@ body {
   padding: 0;
   right: 0%;
   top: 40%;
-}
+} */
 
 .section01 .zoom_Wrap .img2 {
   margin: 0 8.125rem 0 3.125rem;
@@ -155,17 +153,22 @@ body {
 article .section02 {
   right: 10%;
   position: fixed;
-  /* position: sticky; */
 }
 article .section02 .p_info {
   right: 10%;
-  /* position: fixed; */
   gap: 1.875rem;
   background: #fff;
 }
 
 /* -----------------------------------section03 */
 /* --------평점, 별, 리뷰수, 설명글, 후기사진 */
+/* .sec03_line {
+  width: 79vw;
+  height: 1px;
+  background: var(--S);
+  margin-top: 20px;
+} */
+
 .section03 h5 button {
   font-size: 1.25rem;
   font-weight: 400;
@@ -262,7 +265,7 @@ article .section02 .p_info {
 }
 .section03 {
   width: 100%;
-  margin: 12.5rem 12.25rem 0 12.25rem;
+  margin: 12.5rem 30.625rem 12.5rem 12.25rem;
 }
 .section03 #accordionPanelsStayOpenExample {
   width: 56%;
@@ -290,39 +293,29 @@ article .section02 .p_info {
 }
 
 .slider_wrapper {
-  height: 614px;
+  /* height: 28.8125rem; */
   overflow: hidden;
+  margin: 0 37.625rem 12.5rem 12.25rem;
 }
 
 /* ul */
 .slider_wrapper ul {
-  margin-left: 12.188rem;
-  position: absolute;
-  /* height: 38.125rem; */
   width: 100%;
   transition: left 0.5s ease-in-out;
-  left: 0;
-  gap: 1.875rem;
+  gap: 2.5rem;
+  padding: 0px 3.75rem;
 }
 
-.slides li {
-  width: 450px;
-  height: 400px;
-  background: #ccc;
-  line-height: 589px;
+.slider_wrapper .bestList {
+  box-shadow: 4px 4px 3px #ededed;
 }
-.slides li:last-child {
+.slider_wrapper .bestList:last-child {
   gap: 0;
 }
 
-.bestList {
-  box-shadow: 4px 4px 3px #ededed;
-  /* width: 28.125rem; */
-}
-
 .bestList a > img {
-  width: 25rem;
-  height: 25rem;
+  width: 18.75rem;
+  height: 18.75rem;
 }
 
 .yellow_Btn {
@@ -331,19 +324,25 @@ article .section02 .p_info {
   right: 75.4%;
 }
 
-.best .prev_btn,
-.next_btn {
+.slider_wrapper .prev_btn,
+.slider_wrapper .next_btn {
   color: var(--G);
-  font-size: 3.125rem;
+  font-size: 34px;
   z-index: 10;
-  top: 89%;
+  top: 60%;
 }
 
-.best .next_btn {
-  right: 1%;
+.slider_wrapper .next_btn {
+  right: 0;
 }
-.best .prev_btn {
-  left: 5%;
+
+h3 {
+  margin-bottom: 3.125rem;
+  margin-top: 0;
+}
+.y_Btn_sm {
+  width: 7.5rem;
+  height: 3.125rem;
 }
 
 /* wish, cart btn */

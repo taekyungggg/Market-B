@@ -54,32 +54,40 @@ $(window).resize(function () {
   }, 500);
 });
 
-//
-const wishBtn = document.querySelector(".wish_Btn");
+//상품 슬라이드
+$(".slider_wrapper").each(function () {
+  var sliderUl = $(this).find("ul"),
+    slides = sliderUl.find("li"),
+    currentIdx = 0,
+    slideCount = slides.length,
+    slideWidth = 450,
+    slideMargin = 30,
+    slideToShow = 4,
+    prevBtn = $(this).find(".prev_btn"),
+    nextBtn = $(this).find(".next_btn");
 
-// 하트 아이콘 요소 가져오기
-const heartIcon = wishBtn.querySelector(".fa-heart");
+  // 슬라이드 배치
+  sliderUl.width(slideWidth * slideCount + slideMargin * (slideCount - 1));
 
-// 버튼 클릭 시 이벤트 리스너 등록
-wishBtn.addEventListener("click", function () {
-  // 현재 버튼의 상태
-  const isActive = wishBtn.classList.contains("active");
-
-  // 하트 아이콘 요소의 클래스를 toggle
-  heartIcon.classList.toggle("fa-regular");
-  heartIcon.classList.toggle("fa-solid");
-
-  // 버튼의 활성화/비활성화 상태를 toggle
-  wishBtn.classList.toggle("active");
-
-  // 하트 아이콘의 색상과 display 속성을 변경
-  if (isActive) {
-    // 원래대로 돌아가는 경우
-    heartIcon.style.color = "black";
-    heartIcon.style.display = "inline-block";
-  } else {
-    // 활성화되는 경우
-    heartIcon.style.color = "red";
-    heartIcon.style.display = "none";
+  // 슬라이드 이동함수
+  function moveSlide(idx) {
+    sliderUl.css("left", -idx * (slideWidth + slideMargin));
+    currentIdx = idx;
   }
+
+  // 버튼으로 이동하기
+  nextBtn.on("click", function () {
+    if (currentIdx === slideCount - slideToShow) {
+      moveSlide(0);
+    } else {
+      moveSlide(currentIdx + 1);
+    }
+  });
+  prevBtn.on("click", function () {
+    if (currentIdx === 0) {
+      moveSlide(slideCount - slideToShow);
+    } else {
+      moveSlide(currentIdx - 1);
+    }
+  });
 });

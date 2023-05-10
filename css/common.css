@@ -366,30 +366,20 @@ h3 {
   width: 27%;
 }
 /* click event */
-.cart_wish_BtnWrapper .heart-img.active {
-  content: url("/img/svg/heart-red.png");
-  width: 27%;
-  /* color: var(--R); */
-}
-
-.wish_Btn .fa-regular.fa-heart {
-  color: black;
-  display: inline-block;
-}
-
-.wish_Btn.active .fa-regular.fa-heart {
+.wish_Btn i:last-child{
   display: none;
-  z-index: -10;
-}
-
-.wish_Btn .fa-solid.fa-heart {
   color: red;
-  display: none;
 }
 
-.wish_Btn.active .fa-solid.fa-heart {
-  display: inline-block;
-  z-index: 10;
+.wish_Btn.on i:last-child{
+  display: block;
+  color: red;
+}
+.wish_Btn.on i:first-child{
+  display: none;
+}
+.cart_Btn.on i{
+  color: var(--Y);
 }
 
 /* ---------------------------------------footer */

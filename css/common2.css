@@ -66,15 +66,29 @@ h2 {
 
 .y_Btn_sm {
   background-color: var(--Y);
-  width: 137px;
-  height: 60px;
+  color: var(--B);
+  width: 8.5625rem;
+  height: 3.75rem;
   border: none;
+  font-size: 1.125rem;
+  padding: 0;
+}
+.y_Btn_sm:hover,
+.y_Btn_sm a:hover {
+  background-color: var(--Y);
+  width: 8.5625rem;
+  height: 3.75rem;
+  border: none;
+  color: var(--G);
 }
 .y_Btn2 {
   background-color: var(--Y);
-  height: 60px;
-  width: 280px;
+  height: 3.75rem;
+  width: 17.5rem;
   border: none;
+}
+.y_Btn2 button:hover {
+  background-color: var(--Y) !important;
 }
 .y_Btn2 a {
   font-size: 1.25rem;
@@ -84,6 +98,7 @@ h2 {
 .btn_text {
   font-size: 20px;
   font-weight: bold;
+  color: var(--B);
 }
 
 .btn_shop {
@@ -149,6 +164,9 @@ header {
 .m_t {
   margin-top: 12.5rem;
 }
+.m_auto {
+  margin: 0px 12.25rem;
+}
 
 .A {
   position: absolute;
@@ -160,6 +178,10 @@ header {
 
 .F {
   display: flex;
+}
+.FC {
+  display: flex;
+  flex-direction: column;
 }
 .G {
   display: grid;
@@ -333,6 +355,52 @@ h3 {
 .container {
   width: 95.625rem;
   margin: 0 auto;
+}
+/* common design */
+.rating .star i {
+  color: var(--Y);
+}
+.etc {
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+.etc_num {
+  width: 15%;
+}
+.review_num {
+  width: 15%;
+}
+.cart_wish_BtnWrapper {
+  width: 30%;
+}
+.cart_wish_BtnWrapper button {
+  width: 27%;
+}
+
+/* click event */
+.wish_Btn i:last-child {
+  display: none;
+  color: red;
+}
+
+.wish_Btn.on i:last-child {
+  display: block;
+  color: red;
+}
+.wish_Btn.on i:first-child {
+  display: none;
+}
+
+/*  */
+.cart_Btn i {
+  /* display: block; */
+  color: var(--B);
+}
+
+.cart_Btn.on i {
+  /* display: block; */
+  color: var(--Y);
 }
 
 /* ---------------------------------------footer */

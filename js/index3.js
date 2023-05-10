@@ -20,22 +20,16 @@ $(function () {
     mainImg_wrap.slick("slickPrev");
   });
 
-  //이걸로 하면 왜 안되는 걸까요??
-  // $(pause, play).click(() => {
-  //   $(pause, play).toggle();
-  //   $(".mainImg_wrapper").slick("slickPause");
-  //   $(".mainImg_wrapper").slick("slickPlay");
-  // });
 
-  $(pause).click(() => {
-    $(pause).hide();
-    $(play).show();
+  pause.click(() => {
+    pause.hide();
+    play.show();
     mainImg_wrap.slick("slickPause");
   });
 
-  $(play).click(() => {
-    $(play).hide();
-    $(pause).show();
+  play.click(() => {
+    play.hide();
+    pause.show();
     mainImg_wrap.slick("slickPlay");
   });
 
@@ -49,22 +43,32 @@ $(function () {
   //메뉴버튼
   let nav_btn = $(".menu_btn"),
     lnb_list = $(".category_list");
-  nav_btn.click(function () {
-    lnb_list.toggleClass("on");
+  nav_btn.click(function (e) {
+    e.preventDefault();
+    nav_btn.toggleClass('on')
+    if(nav_btn.hasClass('on')){
+      lnb_list.show();
+    }else{
+      lnb_list.hide();
+    }
   });
+
   lnb_list.on("mouseleave", function () {
     $(this).hide();
   });
 
+
   //카트담기, 좋아요 버튼
-  let empty_like = $(".wish_Btn >img");
+  let empty_like = $(".wish_Btn");
   empty_like.click(function () {
     $(this).toggleClass("on");
   });
-});
+
+
+
 
 //--------------------------------------- section01 슬라이드
-document.addEventListener("DOMContentLoaded", () => {
+
   let sliderWrapper = document.querySelectorAll(".slider_wrapper");
 
   sliderWrapper.forEach(function (item) {
@@ -124,4 +128,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // circle.addEventListener("mouseover",() => (magaTitle.style.color = "var(--Y)")
   // );
   // circle.addEventListener("mouseout", () => (magaTitle.style.color = ""));
+
 });

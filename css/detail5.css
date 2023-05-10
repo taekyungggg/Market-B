@@ -63,6 +63,10 @@ body {
   width: 31.25rem;
   gap: 3.125rem;
 }
+.section01 .imgWrapper > img,
+.section01 .zoom_Wrap .img2 {
+  box-shadow: 1px 1px 4px var(--Gg);
+}
 
 .section01 .zoom_Wrap .imgWrapper .slide_wrap i {
   font-size: 28px;
@@ -152,14 +156,18 @@ body {
   gap: 0.625rem;
 }
 /* add */
-article .section02 {
+.section02 {
   right: 10%;
+  top: 38%;
+  width: 18.75rem;
+  height: 41.25rem;
   position: fixed;
-  /* position: sticky; */
+  /* bottom: calc(28.125rem + 5%); */
 }
-article .section02 .p_info {
-  right: 10%;
-  /* position: fixed; */
+.section02 .p_info {
+  width: 100%;
+  height: 100%;
+  /* position: fixed;dddddddddddddddddddddd */
   gap: 1.875rem;
   background: #fff;
 }
@@ -246,7 +254,63 @@ article .section02 .p_info {
 .review_first_wrap .review_second_wrap p {
   line-height: 1.5625rem;
 }
+.review_photo_wrap .more_btn_wrap {
+  width: 11.25rem;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.1s ease-in-out;
+}
+.review_photo_wrap .more_btn_wrap:hover {
+  box-shadow: 1px 1px 4px var(--G);
+  font-size: 1.125rem;
+}
+
 /* ---랜덤날짜 */
+
+/* ---추천상품 */
+.bestList .bestItem > button {
+  z-index: 10;
+  right: 0%;
+  font-size: 20px;
+}
+.bestList {
+  box-shadow: 4px 4px 3px #ededed;
+  width: 28.125rem;
+}
+
+.bestList a > img {
+  width: 28.125rem;
+  /* 450px */
+  height: 28.125rem;
+}
+
+.best_desc {
+  text-align: center;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
+}
+/* ----------------slide */
+.slider_wrapper {
+  height: 614px;
+  overflow: hidden;
+}
+
+/* ul */
+.slider_wrapper ul {
+  margin-left: 12.188rem;
+  position: absolute;
+  height: 38.125rem;
+  width: 100%;
+  transition: left 0.5s ease-in-out;
+  left: 0;
+  gap: 1.875rem;
+}
+
+.section04 {
+  margin-top: 12.5rem;
+}
 
 /* bootstrap css change */
 .accordion-body {
@@ -269,85 +333,4 @@ article .section02 .p_info {
 }
 #allreview {
   gap: 3rem;
-}
-
-/* ----------------recommand slide */
-.rec {
-  margin-top: 12.5rem;
-}
-.bestList .bestItem > button {
-  z-index: 10;
-  right: 0%;
-  font-size: 20px;
-}
-
-.best_desc {
-  text-align: center;
-  flex-direction: column;
-  gap: 1.25rem;
-  padding: 1.25rem;
-  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
-}
-
-.slider_wrapper {
-  height: 614px;
-  overflow: hidden;
-}
-
-/* ul */
-.slider_wrapper ul {
-  margin-left: 12.188rem;
-  position: absolute;
-  /* height: 38.125rem; */
-  width: 100%;
-  transition: left 0.5s ease-in-out;
-  left: 0;
-  gap: 1.875rem;
-}
-
-.slides li {
-  width: 450px;
-  height: 400px;
-  background: #ccc;
-  line-height: 589px;
-}
-.slides li:last-child {
-  gap: 0;
-}
-
-.bestList {
-  box-shadow: 4px 4px 3px #ededed;
-  /* width: 28.125rem; */
-}
-
-.bestList a > img {
-  width: 25rem;
-  height: 25rem;
-}
-
-.yellow_Btn {
-  position: absolute;
-  z-index: 10;
-  right: 75.4%;
-}
-
-.best .prev_btn,
-.next_btn {
-  color: var(--G);
-  font-size: 3.125rem;
-  z-index: 10;
-  top: 89%;
-}
-
-.best .next_btn {
-  right: 1%;
-}
-.best .prev_btn {
-  left: 5%;
-}
-
-/* wish, cart btn */
-.wish_Btn i,
-.cart_Btn i {
-  font-size: 1.125rem;
 }
