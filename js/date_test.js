@@ -1,65 +1,61 @@
-(function () {
-  //user id 난수만들기
+$(document).ready(function () {
   const userids = () => {
     let result = "";
-    const characters = "abcdefghijklmnopqrstuvwxyz";
+    const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
     const charactersLength = characters.length;
-    //for (var i = 0, chr; i < str.length; i++) {
+
     for (let i = 0; i < 7; i++) {
-      if (0 < i && i < 3) {
+      if (0 <= i && i < 4) {
+        //charAt() : 문자열에서 특정 인덱스에 위치하는 유니코드 단일문자를 반환
         result += characters.charAt(
           Math.floor(Math.random() * charactersLength)
         );
-        // result = "";
       } else {
         result += "*";
       }
     }
     return result;
   };
-  const id_list = document.getElementsByClassName(".randomId");
+
+  const id_list = $("#randomId");
   function make_id() {
-    id_list.innerHTML = userids;
+    id_list.html(userids());
   }
   make_id();
 
-  //리뷰날짜 난수만들기
-  const review_date = document.getElementsByClassName(".randomDate");
-
-  /*
+  //random date
+  const review_date = $(".review_random_date");
+  const start = new Date(2023, 1, 1);
+  const end = new Date();
   function getRandomDate(start, end) {
-    const start = new Date(2023, 1, 1),
-      end = new Date(),
-      startDate = start.getTime();
-    endDate = end.getTime();
+    const startDate = start.getTime();
+    const endDate = end.getTime();
 
     return new Date(startDate + Math.random() * (endDate - startDate));
   }
-  */
 
   const msgs = Array(100)
     .fill(0)
     .map((_, i) => ({
       id: i + 1,
-      userID: make_id(),
-      //   timestamp: new Date().getTime() + i * 1000 * 60,
-      timestamp: getRandomDate(),
+      userID: userids(),
+      timestamp: getRandomDate(start, end),
     }));
 
   const map1 = msgs.map((x, i) => {
+    const date = new Date(x.timestamp);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
     return {
       id: x.id,
-      // userID: x.userID,
-      timestamp: new Date(x.timestamp).toLocaleString("ko-KR", {
-        year: "2-digit",
-        month: "2-digit",
-        day: "2-digit",
-      }),
+      timestamp: `${year}-${month}-${day}`,
     };
   });
 
   function randomDate() {
-    review_date.innerHTML = msgs[0].timestamp;
+    review_date.html(map1[0].timestamp);
   }
   randomDate();
 

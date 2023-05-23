@@ -225,7 +225,6 @@ article .section02 .p_info {
 }
 .review02_wrap .opt_wrapper .form-check {
   gap: 0.5rem;
-  align-items: flex-end;
 }
 /* ---리뷰리스트 */
 .review03_wrap .review_03_ul {
@@ -425,7 +424,7 @@ article .img2 {
 #allreview {
   gap: 3rem;
 }
-
+/* foundation css change */
 .section03 .accordion .accordion-item button:focus,
 .section03 .accordion .accordion-item button:hover {
   background: rgba(237, 237, 237, 1);
@@ -433,4 +432,7 @@ article .img2 {
 }
 .section03 .accordion .accordion-item button a {
   padding: 0;
+}
+.etc .cart_wish_BtnWrapper button {
+  background: transparent;
 }

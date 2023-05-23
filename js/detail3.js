@@ -26,35 +26,6 @@ $(document).ready(function () {
   });
 
   //scroll fix event
-  let target = $(".section02"),
-    targetHeight = target.height(),
-    targetOST = target.offset().top,
-    stickyEl = target.find(".p_info"),
-    // stickyElWidth = stickyEl.width(),
-    // stickyElLeft = stickyEl.offset().left,
-    rec_list = $(".rec"),
-    recOST = rec.offset().top;
-
-  $(window).scroll(() => {
-    let sct = $(window).scrollTop();
-
-    // 추천상품 섹션의 ost보다 스크롤 양이 많으면
-    //200 : 추천상품의 margin top
-    //347: stickyEl의 윗부분
-    if (recOST > targetOST + targetHeight + 200) {
-      stickyEl.css({
-        position: "relative",
-        top: targetOST + targetHeight - 347,
-        width: "auto",
-      });
-    } else {
-      // 추천상품 섹션의 ost보다 스크롤 양이 적으면
-      // if (recOST < targetOST + targetHeight + 200) {
-      stickyEl.css({
-        position: "fixed",
-      });
-    }
-  });
 
   // 추천상품
   let slide_start = $(",slider_wrapper");

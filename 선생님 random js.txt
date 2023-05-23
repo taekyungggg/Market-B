@@ -1,0 +1,69 @@
+const userids = () => {
+    let result = "";
+    const characters = "abcdefghijklmnopqrstuvwxyz";
+    const charactersLength = characters.length;
+    //for (var i = 0, chr; i < str.length; i++) {
+    for (let i = 0; i < 7; i++) {
+      if (0 <= i && i < 4) {
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength)
+        );
+        // result = "";
+      } else {
+        result += "*";
+      }
+    }
+    return result;
+  };
+  const id_list = document.getElementById("randomId");
+  function make_id() {
+    id_list.innerHTML = userids();
+  }
+  make_id();
+
+  //리뷰날짜 난수만들기
+  const review_date = document.querySelector(".review_random_date");
+
+      const start = new Date(2023, 1, 1),
+      end = new Date();
+  function getRandomDate(start, end) {
+
+      startDate = start.getTime();
+    endDate = end.getTime();
+
+    //Math.random() * (endDate - startDate)는 시작 날짜와 종료 날짜 사이의 범위에서 랜덤한 수를 생성
+    return new Date(startDate + Math.random() * (endDate - startDate));
+  }
+
+
+//배열틀 만들기
+  const msgs = Array(100)
+    .fill(0)
+    .map((_, i) => ({
+      id: i + 1,
+      userID: make_id(),
+      //   timestamp: new Date().getTime() + i * 1000 * 60,
+      timestamp: getRandomDate(start,end),
+    }));
+
+
+//map1은 msgs 배열을 순회하면서 각 요소의 id와 timestamp 속성을 새로운 객체로 매핑한 배열
+  const map1 = msgs.map((x, i) => {
+                      // x는 msgs 배열의 각 요소를 의미
+    return {
+      id: x.id, //x는 현재 처리되고 있는 요소
+      timestamp: new Date(x.timestamp).toLocaleString("ko-KR", {
+        year: "2-digit",
+        month: "2-digit",
+        day: "2-digit",
+      }),
+    };
+  });
+
+  function randomDate() {
+    review_date.innerHTML = msgs[0].timestamp;
+  }
+  randomDate();
+
+  console.log(randomDate);
+  console.log(map1);

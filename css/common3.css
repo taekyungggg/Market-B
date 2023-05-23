@@ -282,10 +282,10 @@ header {
 /* 메뉴박스 너비 지정 */
 /* dep02 */
 .catebox_1 span {
-  width: 155px;
+  width: 9.6875rem;
 }
 .catebox_2 {
-  width: 144px;
+  width: 9rem;
 }
 .catebox_2 li {
   background: var(--S);
@@ -294,8 +294,8 @@ header {
   width: 144px;
 }
 .lnb {
-  margin-top: 20px;
-  width: 180px;
+  margin-top: 1.25rem;
+  width: 11.25rem;
   z-index: 1;
 }
 
@@ -303,20 +303,21 @@ header {
   position: absolute;
   left: 100.5%;
   top: -1px;
-  display: none;
+  /* display: none; */
+  opacity: 0;
   background-color: #f6dd85;
 }
 /* hover event */
 .category_list {
   opacity: 0;
 }
-.category_list:hover {
+.category_list.on {
   opacity: 1;
 }
-.category_list > li:hover > ul {
+.category_list > li.on > ul {
   opacity: 1;
 }
-.catebox_1 > li:hover ul {
+.catebox_1 > li.on ul {
   opacity: 1;
 }
 .category_list > ul > ul {

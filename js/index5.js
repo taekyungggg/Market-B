@@ -143,8 +143,12 @@ $(document).ready(function () {
       sketchSwitch = true;
     } else if (sketchSwitch) {
       sketchSwitch = false;
+      let random_img = Math.floor(Math.random() * 3) + 1;
       let sketchDiv = `<div class="scratch"></div>`.repeat(32);
       figSketch.find(".grid").html(sketchDiv);
+      figSketch
+        .find(".scratch")
+        .css("background-image", `url("../img/main/coupon${random_img}.png")`);
     }
 
     let scratch = figSketch.find(".scratch");
@@ -152,7 +156,6 @@ $(document).ready(function () {
       scratch.eq(idx).css({
         "background-size": `${figSketchWidth}px ${figSketchHeight}px`,
         "background-position-x": `-${
-          // grid로 나눈 사각형 위치 - 배경 맨 왼쪽에서의 거리 = x기준에서 왼쪽으로 = 마이너스
           scratch.eq(idx).offset().left - figSketchPos.left
         }px`,
         "background-position-y": `-${
@@ -172,7 +175,25 @@ $(document).ready(function () {
     // }
   }
   event_Sketch();
+
+  // a태그 넣어주기
+  let drawingbox = figSketch.find(".grid.drawing");
+  let allscratch = figSketch.find(".scratch");
+  let aTag = $(
+    '<a href="https://marketb.kr/board/gallery/read2.html?no=1526286&board_no=2"></a>'
+  );
+  function checkOpacity() {
+    if (drawingbox.length === allscratch.length) {
+      drawingbox.append(aTag);
+    } else {
+      aTag.remove();
+    }
+  }
+  checkOpacity();
+  console.log(drawingbox.length);
+  console.log(allscratch.length);
 });
+
 // let sliderWrapper = document.querySelectorAll(".slider_wrapper");
 
 // sliderWrapper.forEach(function (item) {

@@ -20,7 +20,6 @@ $(function () {
     mainImg_wrap.slick("slickPrev");
   });
 
-
   pause.click(() => {
     pause.hide();
     play.show();
@@ -45,10 +44,10 @@ $(function () {
     lnb_list = $(".category_list");
   nav_btn.click(function (e) {
     e.preventDefault();
-    nav_btn.toggleClass('on')
-    if(nav_btn.hasClass('on')){
+    nav_btn.toggleClass("on");
+    if (nav_btn.hasClass("on")) {
       lnb_list.show();
-    }else{
+    } else {
       lnb_list.hide();
     }
   });
@@ -57,17 +56,18 @@ $(function () {
     $(this).hide();
   });
 
-
   //카트담기, 좋아요 버튼
-  let empty_like = $(".wish_Btn");
-  empty_like.click(function () {
-    $(this).toggleClass("on");
-  });
+  // let empty_like = $(".wish_Btn");
+  // empty_like.click(function () {
+  //   $(this).toggleClass("on");
+  // });
 
+  // let putincart_btn = $(".cart_Btn");
+  // putincart_btn.click(function () {
+  //   $(this).toggleClass("on");
+  // });
 
-
-
-//--------------------------------------- section01 슬라이드
+  //--------------------------------------- section01 슬라이드
 
   let sliderWrapper = document.querySelectorAll(".slider_wrapper");
 
@@ -128,5 +128,4 @@ $(function () {
   // circle.addEventListener("mouseover",() => (magaTitle.style.color = "var(--Y)")
   // );
   // circle.addEventListener("mouseout", () => (magaTitle.style.color = ""));
-
 });
