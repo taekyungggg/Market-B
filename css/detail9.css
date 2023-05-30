@@ -75,8 +75,6 @@ body {
   width: 100%;
   height: auto;
 }
-.magnified_element {
-}
 
 .magnify_glass {
   z-index: 300;
@@ -175,6 +173,9 @@ body {
 
 .P_info3 .buy {
   gap: 0.625rem;
+}
+.P_info3 .b_opt > button {
+  padding: 1px 15px 7px;
 }
 /* add */
 article .section02 {
@@ -275,7 +276,15 @@ article .section02 .p_info {
 .review_first_wrap .review_second_wrap p {
   line-height: 1.5625rem;
 }
-/* ---랜덤날짜 */
+.review_first #randomId {
+  font-size: 15px;
+}
+.review_first #randomId {
+  font-size: 15px;
+}
+.review_first .random_wrap {
+  gap: 1.25rem;
+}
 
 /* ----------------recommand slide */
 .rec {
@@ -291,18 +300,14 @@ article .section02 .p_info {
   flex-direction: column;
   gap: 1.25rem;
   padding: 1.25rem;
-  box-shadow: 0px, 4px rgba(0, 0, 0, 0.25);
 }
 
 .slider_wrapper {
-  /* height: 28.8125rem; */
-  overflow: hidden;
   margin: 0 37.625rem 12.5rem 12.25rem;
 }
 
 /* ul */
 .slider_wrapper ul {
-  width: 100%;
   transition: left 0.5s ease-in-out;
   gap: 2.5rem;
   padding: 0px 3.75rem;

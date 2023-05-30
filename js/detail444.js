@@ -30,50 +30,10 @@ $(document).ready(function () {
 
   //scroll fix event
 
-  // 추천상품
-  let slide_start = $(",slider_wrapper");
-
-  // $(".slider_wrapper").each(function ()
-  // slide_start.on("click", function () {
-  let sliderUl = $(this).find("ul"),
-    slides = sliderUl.find("li"),
-    currentIdx = 0,
-    slideCount = slides.length,
-    slideWidth = 300,
-    slideMargin = 40,
-    slideToShow = 3,
-    prevBtn = $(this).find(".prev_btn"),
-    nextBtn = $(this).find(".next_btn");
-
-  // 슬라이드 배치
-  sliderUl.width(slideWidth * slideCount + slideMargin * (slideCount - 1));
-
-  // 슬라이드 이동함수
-  function moveSlide(idx) {
-    sliderUl.css("left", -idx * (slideWidth + slideMargin));
-    currentIdx = idx;
-  }
-
-  // 버튼으로 이동하기
-  nextBtn.on("click", function () {
-    if (currentIdx === slideCount - slideToShow) {
-      moveSlide(0);
-    } else {
-      moveSlide(currentIdx + 1);
-    }
-  });
-  prevBtn.on("click", function () {
-    if (currentIdx === 0) {
-      moveSlide(slideCount - slideToShow);
-    } else {
-      moveSlide(currentIdx - 1);
-    }
-  });
-
   //id, date random
   const userids = () => {
     let result = "";
-    const characters = "abcdefghijklmnopqrstuvwxyz";
+    const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
     const charactersLength = characters.length;
 
     for (let i = 0; i < 7; i++) {
@@ -89,6 +49,8 @@ $(document).ready(function () {
   };
 
   const id_list = $("#randomId");
+  //
+  console.log(id_list);
   function make_id() {
     id_list.html(userids());
   }
@@ -132,4 +94,62 @@ $(document).ready(function () {
 
   console.log(randomDate);
   console.log(map1);
+
+  // 추천상품
+  let slide_start = $(",slider_wrapper");
+
+  // $(".slider_wrapper").each(function ()
+  // slide_start.on("click", function () {
+  let sliderUl = $(this).find("ul"),
+    slides = sliderUl.find("li"),
+    currentIdx = 0,
+    slideCount = slides.length,
+    slideWidth = 300,
+    slideMargin = 40,
+    slideToShow = 3,
+    prevBtn = $(this).find(".prev_btn"),
+    nextBtn = $(this).find(".next_btn");
+
+  // 슬라이드 배치
+  sliderUl.width(slideWidth * slideCount + slideMargin * (slideCount - 1));
+
+  // 슬라이드 이동함수
+  function moveSlide(idx) {
+    sliderUl.css("left", -idx * (slideWidth + slideMargin));
+    currentIdx = idx;
+  }
+
+  // 버튼으로 이동하기
+  nextBtn.on("click", function () {
+    if (currentIdx === slideCount - slideToShow) {
+      moveSlide(0);
+    } else {
+      moveSlide(currentIdx + 1);
+    }
+  });
+  prevBtn.on("click", function () {
+    if (currentIdx === 0) {
+      moveSlide(slideCount - slideToShow);
+    } else {
+      moveSlide(currentIdx - 1);
+    }
+  });
+
+  //구입갯수
+  let minus = $(".b_opt > .fa-minus"),
+    plus = $(".b_opt > .fa-plus"),
+    buy_num = $(".b_opt > .num");
+
+  minus.click(function () {
+    let currentNum = parseInt(buy_num.text());
+    if (currentNum > 1) {
+      buy_num.text(currentNum - 1);
+    }
+  });
+
+  plus.click(function () {
+    var currentNum = parseInt(buy_num.text());
+    buy_num.text(currentNum + 1);
+  });
+  console.log(buy_num);
 });

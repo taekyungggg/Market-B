@@ -5,7 +5,7 @@
 /* -----------------------------------notice */
 .notice {
   width: 100%;
-  height: 55px;
+  height: 3.4375rem;
   background: #3a3936;
 }
 
@@ -22,19 +22,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .notice .notice_content a {
   color: #fff;
   font-size: 0.875rem;
 }
 .notice .notice_content a i {
-  margin-right: 10px;
+  margin-right: 0.625rem;
+}
+.notice .notice_content i:hover,
+.notice .notice_content a:hover {
+  color: var(--Y);
 }
 /* ------------------------------------subNav */
 .subNav {
   margin-top: 5rem;
 }
 .subNav .subNav_content a {
-  padding: 10px;
+  padding: 0.625rem;
 }
 .subNav_content {
   width: 100%;
@@ -230,18 +235,22 @@
 .icon a {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
   text-align: center;
+  transition: all 0.8 ease-in-out;
+}
+.icon a:hover {
+  color: var(--Y);
   /* transition: all 0.3 ease-in-out; */
 }
 .icon a i {
   font-size: 1.875rem;
 }
 
-.icon a:hover ::before {
+/* .icon a:hover ::before {
   color: var(--Y);
   transition: all 0.3 ease-in-out;
-}
+} */
 
 .Top_span {
   top: 5px;
@@ -499,10 +508,15 @@ h7 > a:hover {
 .section05 .cp_desc {
   font-weight: 400;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
 }
-.section05 .cp_desc > p {
-  font-size: 16px;
+.section05 .cp_desc .desc_info {
+  font-size: 1rem;
+}
+.section05 .cp_desc .desc_sale {
+  font-size: 1.375rem;
+  color: var(--R);
+  margin-bottom: 1rem;
 }
 .section05 .cp_desc01 {
   font-size: 2.5rem;
@@ -512,7 +526,7 @@ h7 > a:hover {
   margin-bottom: 2.5rem;
 }
 .section05 .cp_desc01 > i {
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 .section05 .cp_desc01 > p {
   font-family: "Montserrat", sans-serif;
@@ -534,7 +548,7 @@ h7 > a:hover {
   top: 0;
   bottom: 0;
   left: 0;
-  right: -34%;
+  right: 0;
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(4, 1fr);
@@ -551,4 +565,15 @@ h7 > a:hover {
 
 .section05 .notice .scratch.drawing {
   opacity: 1;
+}
+
+.notice .grid {
+  position: relative;
+}
+.notice .grid a {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }

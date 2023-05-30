@@ -148,7 +148,7 @@ h2 {
   display: none;
 }
 
-.info_tit {
+.info_content {
   /* width: 22.688rem; */
   position: absolute;
   transform: translate(-50%, -50%);
@@ -157,16 +157,16 @@ h2 {
   left: 65%;
   top: 47%;
   border-radius: 5px;
-  padding: 5px 20px 25px 20px;
+  padding: 1.875rem;
 }
-.info_tit > h6 {
+.info_content > h6 {
   font-size: 0.875rem;
   font-weight: 700;
   color: #333;
   line-height: 0.875rem;
   padding: 20px 0;
 }
-.info_tit > h6::after {
+.info_content > h6::after {
   content: "";
   position: absolute;
   bottom: 1rem;
@@ -174,32 +174,48 @@ h2 {
   width: 3.875rem;
   color: #333;
 }
-.info_tit > h5 {
+.info_content > h5 {
   font-size: 1rem;
   font-weight: 700;
   color: #333;
+  margin: 20px 0 30px;
 }
-.info_cont .bold {
+.info_content .bold {
   font-size: 0.875rem;
   font-weight: 500;
   color: #333;
 }
-.info_cont p:nth-child(2) {
+.info_content p:nth-child(2) {
   font-size: 0.875rem;
   font-weight: 300;
   color: #504f4f;
+  line-height: 1.25rem;
 }
-/* .info_index p, .info_detail p{
-    padding: 20px;
-} */
 .close {
   background: transparent;
   border: none;
-  padding: 1.2rem 0 0 0;
   cursor: pointer;
 }
+/* new */
+.info_index .store_address {
+  gap: 50px;
+}
+.info_index .store_number {
+  gap: 50px;
+}
+.info_index .store_time {
+  gap: 4.0625rem;
+}
+.info_index {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.info_content .info_first {
+  gap: 20.75rem;
+}
 
-.x {
+/* .x {
   width: 3rem;
   height: 2.5rem;
-}
+} */

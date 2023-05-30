@@ -366,19 +366,19 @@ h3 {
   width: 27%;
 }
 /* click event */
-.wish_Btn i:last-child{
+.wish_Btn i:last-child {
   display: none;
   color: red;
 }
 
-.wish_Btn.on i:last-child{
+.wish_Btn.on i:last-child {
   display: block;
   color: red;
 }
-.wish_Btn.on i:first-child{
+.wish_Btn.on i:first-child {
   display: none;
 }
-.cart_Btn.on i{
+.cart_Btn.on i {
   color: var(--Y);
 }
 
