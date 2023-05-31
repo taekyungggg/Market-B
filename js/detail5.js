@@ -96,42 +96,54 @@ $(document).ready(function () {
 
   // 추천상품
   let slide_start = $(".slider_wrapper");
+  let imgWidth = $(".bestList .bestItem img");
+  let slide_UL = slide_start.find("ul");
+  //새로 수정
+  let rowgap_value = parseInt(slide_UL.css("row-gap"));
 
-  // $(".slider_wrapper").each(function ()
-  // slide_start.on("click", function () {
-  let sliderUl = $(this).find("ul"),
-    slides = sliderUl.find("li"),
-    currentIdx = 0,
-    slideCount = slides.length,
-    slideWidth = 300,
-    slideMargin = 40,
-    slideToShow = 3,
-    prevBtn = $(this).find(".prev_btn"),
-    nextBtn = $(this).find(".next_btn");
+  slide_start.each(function () {
+    let slides = slide_UL.find("li"),
+      currentIdx = 0,
+      slideCount = slides.length,
+      slideWidth = imgWidth.width(),
+      slideToShow = 3,
+      prevBtn = $(this).find(".prev_btn"),
+      nextBtn = $(this).find(".next_btn");
 
-  // 슬라이드 배치
-  sliderUl.width(slideWidth * slideCount + slideMargin * (slideCount - 1));
+    // ul 너비지정
+    slide_UL.width(slideWidth * slideCount + rowgap_value * (slideCount - 1));
 
-  // 슬라이드 이동함수
-  function moveSlide(idx) {
-    sliderUl.css("left", -idx * (slideWidth + slideMargin));
-    currentIdx = idx;
-  }
-
-  // 버튼으로 이동하기
-  nextBtn.on("click", function () {
-    if (currentIdx === slideCount - slideToShow) {
-      moveSlide(0);
-    } else {
-      moveSlide(currentIdx + 1);
+    // 슬라이드 이동함수
+    function moveSlide(idx) {
+      slide_UL.css("left", -idx * (slideWidth + rowgap_value));
+      currentIdx = idx;
     }
-  });
-  prevBtn.on("click", function () {
-    if (currentIdx === 0) {
-      moveSlide(slideCount - slideToShow);
-    } else {
-      moveSlide(currentIdx - 1);
-    }
+    moveSlide(currentIdx);
+
+    // 버튼으로 이동하기
+    nextBtn.on("click", function () {
+      if (currentIdx === slideCount - slideToShow) {
+        moveSlide(0);
+      } else {
+        moveSlide(currentIdx + 1);
+      }
+    });
+
+    prevBtn.on("click", function () {
+      if (currentIdx === 0) {
+        moveSlide(slideCount - slideToShow);
+      } else {
+        moveSlide(currentIdx - 1);
+      }
+    });
+
+    // prevBtn.on("click", function () {
+    //   if (currentIdx === 0) {
+    //     moveSlide(0);
+    //   } else {
+    //     moveSlide(currentIdx - 1);
+    //   }
+    // });
   });
 
   //구입갯수

@@ -373,13 +373,13 @@ h3 {
   align-items: center;
 }
 .best_desc .rating {
-  width: 30%;
+  width: 37%;
 }
 .best_desc .review_num {
-  width: 10%;
+  width: 20%;
 }
 .best_desc .cart_wish_BtnWrapper {
-  width: 30%;
+  width: 40%;
 }
 /* .etc_num {
   width: 15%;

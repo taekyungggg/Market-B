@@ -304,6 +304,7 @@ article .section02 .p_info {
 
 .slider_wrapper {
   margin: 0 37.625rem 12.5rem 12.25rem;
+  overflow: hidden;
 }
 
 /* ul */
@@ -466,4 +467,5 @@ article .img2 {
 }
 .etc .cart_wish_BtnWrapper button {
   background: transparent;
+  width: 30%;
 }

@@ -73,23 +73,26 @@ $(document).ready(function () {
   });
 
   //------------------------------ section01 슬라이드
-  $(".slider_wrapper").each(function () {
-    let sliderUl = $(this).find("ul"),
-      slides = sliderUl.find("li"),
+  let slide_start = $(".slider_wrapper");
+  let imgWidth = $(".bestList .bestItem img");
+  let slide_UL = slide_start.find("ul");
+  let rowgap_value = slide_UL.css("row-gap");
+
+  slide_start.each(function () {
+    let slides = slide_UL.find("li"),
       currentIdx = 0,
       slideCount = slides.length,
-      slideWidth = 450,
-      slideMargin = 30,
+      slideWidth = imgWidth.width(),
       slideToShow = 4,
       prevBtn = $(this).find(".prev_btn"),
       nextBtn = $(this).find(".next_btn");
 
     // Set slide width
-    sliderUl.width(slideWidth * slideCount + slideMargin * (slideCount - 1));
+    slide_UL.width(slideWidth * slideCount + rowgap_value * (slideCount - 1));
 
     // Move slide function
     function moveSlide(idx) {
-      sliderUl.css("left", -idx * (slideWidth + slideMargin));
+      slide_UL.css("left", -idx * (slideWidth + rowgap_value));
       currentIdx = idx;
     }
 
