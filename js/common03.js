@@ -37,7 +37,7 @@ $(function () {
     } else {
       btnTop.removeClass("on");
     }
-    percentage.css({ height: `${scrPercent * 1.3}%` });
+    percentage.css({ height: `${scrPercent * 1.55}%` });
   }
 
   $(window).scroll(function () {

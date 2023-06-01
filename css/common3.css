@@ -33,7 +33,7 @@ body {
 
 h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 40px;
+  font-size: 2.5rem;
   position: absolute;
   left: 70%;
   top: 70%;
@@ -45,14 +45,15 @@ h2 {
   justify-content: center;
   align-items: center;
   background-color: #b73131;
-  width: 200px;
-  height: 60px;
+  width: 15vw;
+  height: 4vw;
   margin: 0 auto;
   border: none;
 }
 .red_Btn a {
   color: #fff;
   text-align: center;
+  font-size: 20px;
 }
 .red_Btn_sm {
   background-color: var(--R);
@@ -360,8 +361,8 @@ h3 {
 }
 
 .container {
-  width: 95.625rem;
-  margin: 0 auto;
+  /* width: 95.625rem; */
+  margin: 0 7.5rem;
 }
 /* common design */
 .rating .star i {
@@ -369,7 +370,7 @@ h3 {
 }
 .etc {
   justify-content: center;
-  width: 100%;
+  width: 110%;
   align-items: center;
 }
 .best_desc .rating {

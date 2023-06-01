@@ -29,31 +29,70 @@ $(document).ready(function () {
   $(".magnify").jfMagnify({ scale: "2.5" });
 
   //scroll fix event
-  let fix_item = $(".Pd_title .section02");
-  let fix_itemY = fix_item.offset().top;
-  let fix_height = fix_item.height();
-  let fix_finalPostion = fix_itemY + fix_height;
+  //   $(window).on("scroll", function () {
+  //     const fix_item = $(".section02 .p_info");
+  //     function fixAside() {
+  //       const sct = $(window).scrollTop();
+  //       baseTop = 0;
 
-  let rec_item = $("slider_wrapper");
-  let recPosition = rec_item.offset().top;
-  let scrollPosition = $(window).scrollTop();
+  //       if (sct > 300) {
+  //         fix_item.css({
+  //           position: "fixed",
+  //           top: 0,
+  //         });
+  //       } else {
+  //         fix_item.css({
+  //           position: "absolute",
+  //           top: 200,
+  //         });
+  //       }
+  //       console.log(sct);
+  //     }
+  //     fixAside();
+  //   });
+  //   let fix_item = $(".section02 .p_info");
+  //   let sct = $(window).scrollTop();
+  //   function fixAside() {
+  //     baseTop = 0;
 
-  function fixAside() {
-    if (fix_finalPostion >= recPosition) {
+  //     if (sct > 50) {
+  //       fix_item.css({
+  //         position: "fixed",
+  //         top: 0,
+  //       });
+  //     } else {
+  //       fix_item.css({
+  //         position: "absolute",
+  //         top: 200,
+  //       });
+  //     }
+  //   }
+  //   console.log(sct);
+
+  //   $(window).on("scroll", function () {
+  //     fixAside();
+  //   });
+
+  $(window).on("scroll", function () {
+    let fix_item = $(".section02");
+    let sct = $("body").scrollTop();
+    let fix_itemOffset = fix_item.offset().top;
+
+    if (sct > 300) {
       fix_item.css({
-        bottom: `${83}%`,
-        top: "auto",
+        position: "fixed",
+        top: 0,
       });
     } else {
       fix_item.css({
-        position: "fixed",
+        position: "absolute",
+        // top: 200,
       });
     }
-    console.log(scrollPosition);
-    console.log(recPosition);
-  }
-
-  $(window).scroll(fixAside);
+    //sct값이 계속 0으로 나옴.
+    console.log(sct);
+  });
+  $(window).trigger("scroll");
 
   //id, date random
   const userids = () => {

@@ -1,4 +1,4 @@
-html {
+body {
   overflow-x: hidden;
 }
 
@@ -12,7 +12,7 @@ html {
   z-index: 1;
 }
 .mb {
-  margin-bottom: 250px;
+  margin-bottom: 15.625rem;
 }
 
 .sub_header {
@@ -34,11 +34,11 @@ body {
   color: var(--B);
 }
 .Pd_title {
-  gap: 10px;
-  margin-bottom: 40px;
+  gap: 0.625rem;
+  margin-bottom: 2.5rem;
 }
 .Pd_title > p {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 300;
 }
 
@@ -64,11 +64,11 @@ body {
 .element_to_magnify a {
   display: block;
   position: absolute;
-  top: 80px;
-  right: 80px;
+  top: 5rem;
+  right: 5rem;
   background-color: rgba(200, 200, 200, 0.25);
-  padding: 4px;
-  font-size: 18px;
+  padding: 0.25rem;
+  font-size: 1.125rem;
   color: #fff;
 }
 .element_to_magnify img {
@@ -136,6 +136,9 @@ body {
 .P_info2 {
   gap: 1.25rem;
 }
+.fix {
+  position: fixed;
+}
 .section02 .p_info .P_info2 .c_img img {
   width: 6.25rem;
   height: 6.25rem;
@@ -180,7 +183,7 @@ body {
 /* add */
 article .section02 {
   right: 10%;
-  position: fixed;
+  position: absolute;
 }
 article .section02 .p_info {
   right: 10%;
@@ -226,13 +229,13 @@ article .section02 .p_info {
   font-size: 1.5rem;
 }
 .review01_wrap .review_photo_wrap {
-  width: 100%;
+  gap: 1.25rem;
 }
-.review01_wrap .review_photo_wrap img {
-  width: 90%;
-}
+
 .review01_wrap .more_btn_wrap {
   gap: 0.75rem;
+  align-items: center;
+  padding: 0 2.5rem;
 }
 /* --------checkbox, filter btn */
 .review02_wrap .opt_wrapper .review_btn_wrap {
@@ -304,7 +307,7 @@ article .section02 .p_info {
 
 .slider_wrapper {
   margin: 0 37.625rem 12.5rem 12.25rem;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 /* ul */
@@ -466,6 +469,18 @@ article .img2 {
   padding: 0;
 }
 .etc .cart_wish_BtnWrapper button {
-  background: transparent;
   width: 30%;
+}
+
+.review_photo_wrap .more_btn_wrap button:active {
+  background-color: #fff;
+  color: #333;
+}
+
+.P_info3 .buy .b_opt .btn {
+  background-color: #fff;
+}
+
+.P_info3 .buy .b_opt .btn:focus {
+  outline: none;
 }
