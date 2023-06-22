@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>제품 상세페이지</title>
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/5.5.0/css/foundation.css">
         <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -13,15 +13,15 @@
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
         />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/5.5.0/css/foundation.css">
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css?ver=1">
         
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
         <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
        
         
-        <link rel="stylesheet" href="css/common2.css" />
+        <link rel="stylesheet" href="css/common3.css" />
         <link rel="stylesheet" href="css/detail9.css" />
 
         
@@ -143,17 +143,14 @@
                     </div>
                 </div>
                 <!-- 오른쪽 이미지 -->
-                <div id="window" class="magnify">
+                <div id="window" class="magnify A">
                     <div class="magnify_glass"> </div>
                     <div class="element_to_magnify">
                         <!-- <a target="_blank" href="https://github.com/fonstok/jfMagnify"> https://github.com/fonstok/jfMagnify</a> -->
                         <img src="./img/detail/PONDE 벨벳의자 grey 5.jpg" draggable="false"/>
                     </div>
                 </div>
-                
-         
-            
-                
+                               
                 <figcaption class="section02 A">
                     <div class="p_info FC">
                         <div class="P_info1 FC">
@@ -204,12 +201,12 @@
                         <div class="P_info2 FC">
                             <div class="color F">
                                 <p class="c_tit">색상선택:</p>
-                                <p class="c_grey">grey</p>
-                                <p class="c_pink">pink</p>
+                                <button class="btn_opt1"><span>grey</span></button>
+                                <button class="btn_opt2"><span>pink</span></button>
                             </div>
                             <div class="c_img F">
-                                <img src="img/detail/PONDE 벨벳의자 grey1.jpg" alt="" class="img_grey">
-                                <img src="img/detail/PONDE 벨벳의자 pink1.jpg" alt="" class="img_pink">
+                               <button class="btn_opt1_img"> <img src="img/detail/PONDE 벨벳의자 grey1.jpg" alt="" class="img_grey"></button>
+                                <button class="btn_opt2_img"><img src="img/detail/PONDE 벨벳의자 pink1.jpg" alt="" class="img_pink"></button>
                             </div>
                         </div>
                         <div class="P_info3 FC">
@@ -217,9 +214,9 @@
                                 <div class="b_num H F">
                                     <p>구입갯수</p>
                                     <div class="b_opt F">
-                                        <button type="button" class="btn F"><i class="fa-solid fa-minus"></i></button>
-                                        <p class="num">1</p>
-                                        <button type="button" class="btn F"><i class="fa-solid fa-plus"></i></button>                               
+                                        <button type="button" class="btn minus F"><i class="fa-solid fa-minus"></i></button>
+                                        <p class="buyResult">1</p>
+                                        <button type="button" class="btn plus F"><i class="fa-solid fa-plus"></i></button>                               
                                     </div>
                                 </div>
                                 <div class="p_sta H F">
@@ -231,6 +228,7 @@
                                     <p>무료</p>
                                 </div>                    
                             </div>
+                            <div class="buy_total F">최종 구매가<span class="totalcost"></span></div>
                             <div class="y_Btn2 R">
                                 <button type="button" class="btn_shop A"><span class="btn_text">구매하기</span></button>
                             </div>
@@ -238,10 +236,6 @@
                         </div>
                     </div>
                 </figcaption>
-                 
-               
-               
-                
             </article>
         </main>    
                 
@@ -342,8 +336,10 @@
                                     <div class="review_photo"><img src="/img/detail/review03.png" alt=""></div>
                                     <div class="review_photo"><img src="/img/detail/review04.png" alt=""></div>
                                     <div class="more_btn_wrap F">
-                                        <div class="more_btn">more</div>
-                                        <div class="more_btn_plus"><i class="fa-solid fa-plus"></i></div>
+                                        <button class="FC">
+                                            <div class="more_btn">more</div>
+                                            <div class="more_btn_plus"><i class="fa-solid fa-plus"></i></div>
+                                        </button>
                                     </div>
                                 </figure>
                             </section>
@@ -352,12 +348,12 @@
                                 <div class="opt_wrapper F">                                  
                                     <div class="review_check_wrap F">
                                         <div class="form-check form-check-inline F">
-                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <input class="form-check-input review_text" type="checkbox" id="inlineCheckbox1" value="option1" name="option">
                                             <label class="form-check-label" for="inlineCheckbox1">텍스트 리뷰</label>
                                         </div>
                                         <div class="form-check form-check-inline F">
-                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                            <label class="form-check-label" for="inlineCheckbox1">포토 리뷰</label>
+                                            <input class="form-check-input review_photo" type="checkbox" id="inlineCheckbox2" value="option2" name="option">
+                                            <label class="form-check-label" for="inlineCheckbox2">포토 리뷰</label>
                                         </div>
                                     </div>
                                     <div class="review_btn_wrap F">
@@ -411,12 +407,15 @@
                                                     <p class="review_num">(2045)</p>                                                  
                                                 </div>
                                                 <!-- randommmmmmm -->
-                                                <div class="review_random_id">
-                                                    <span id="randomId"></span>                                                      
+                                                <div class="random_wrap F">
+                                                    <div class="review_random_id">
+                                                        <span id="randomId"></span>                                                      
+                                                    </div>
+                                                    <div class="review_random_date">
+                                                        <span id="randomNumber"></span>                                                      
+                                                    </div>  
                                                 </div>
-                                                <div class="review_random_date">
-                                                    <span id="randomNumber"></span>                                                      
-                                                </div>  
+                                                  
                                             </div>
                                             <div class="review_second_wrap">
                                                 <p>집안 포인트 되는 의자를 찾다 화사한 핑크벨벳의자로 선택했는데~역시 굿 초이스~♡ 집안이 훨씬 화사해진듯감성적인 공간연출 하기에 만족스럽
@@ -427,7 +426,7 @@
                                     </li>
                                     <li>
                                         <div class="review_first_wrap FC">
-                                            <div class="review_first">
+                                            <div class="review_first F">
                                                 <!-- star & review number -->
                                                 <div class="rating_wrap F">
                                                     <div class="rating F" data-rate="4.9">                               
@@ -459,8 +458,173 @@
                                                     </div>
                                                     <p class="review_num">(2045)</p>                                                  
                                                 </div>
-                                                <div class="review_random-data">                                                      
-                                                </div>  
+                                                <!-- randommmmmmm -->
+                                                <div class="random_wrap F">
+                                                    <div class="review_random_id">
+                                                        <span id="randomId"></span>                                                      
+                                                    </div>
+                                                    <div class="review_random_date">
+                                                        <span id="randomNumber"></span>                                                      
+                                                    </div>  
+                                                </div>
+                                            </div>
+                                                  
+                                            <div class="review_second_wrap">
+                                                <p>핑크를 살까 그레이를 살까 하다가 무난한 그레이를 선택했는데너무 마음에 들어서 핑크도 하나 주문하려고해요쿠션감도 좋고 100키로 가까이 되
+                                                    는 남편이 앉아도 끄떡없네요 :)카페도 못 가는 이 시국에 벨벳의자 하나로 힐링되는 기분입니다집이 카페 느낌나요 ㅎㅎㅎㅎ너무 만족스러운 제품
+                                                    입니다 :)</p>
+                                            </div>
+                                            <div class="review_line"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="review_first_wrap FC">
+                                            <div class="review_first F">
+                                                <!-- star & review number -->
+                                                <div class="rating_wrap F">
+                                                    <div class="rating F" data-rate="4.9">                               
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="review_num">(2045)</p>                                                  
+                                                </div>
+                                                <!-- randommmmmmm -->
+                                                <div class="random_wrap F">
+                                                    <div class="review_random_id">
+                                                        <span id="randomId"></span>                                                      
+                                                    </div>
+                                                    <div class="review_random_date">
+                                                        <span id="randomNumber"></span>                                                      
+                                                    </div>  
+                                                </div>
+                                                  
+                                            </div>
+                                            <div class="review_second_wrap">
+                                                <p>새해맞이 인테리어에 살짝 변화를 주었어요. 카페 느낌나는 의자 하나로 집 분위기가 고오급져졌습니다! 푹신한 쿠션감, 겨울에 잘 어울리는 포근한
+                                                    벨벳 시트- 골드프레임이 원목 가구들과 꽤 조화롭게 어울려요~</p>
+                                            </div>
+                                            <div class="review_line"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="review_first_wrap FC">
+                                            <div class="review_first F">
+                                                <!-- star & review number -->
+                                                <div class="rating_wrap F">
+                                                    <div class="rating F" data-rate="4.9">                               
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="review_num">(2045)</p>                                                  
+                                                </div>
+                                                <!-- randommmmmmm -->
+                                                <div class="random_wrap F">
+                                                    <div class="review_random_id">
+                                                        <span id="randomId"></span>                                                      
+                                                    </div>
+                                                    <div class="review_random_date">
+                                                        <span id="randomNumber"></span>                                                      
+                                                    </div>  
+                                                </div>
+                                                  
+                                            </div>
+                                            <div class="review_second_wrap">
+                                                <p>새해맞이 인테리어에 살짝 변화를 주었어요. 카페 느낌나는 의자 하나로 집 분위기가 고오급져졌습니다! 푹신한 쿠션감, 겨울에 잘 어울리는 포근한
+                                                    벨벳 시트- 골드프레임이 원목 가구들과 꽤 조화롭게 어울려요~</p>
+                                            </div>
+                                            <div class="review_line"></div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="review_first_wrap FC">
+                                            <div class="review_first F">
+                                                <!-- star & review number -->
+                                                <div class="rating_wrap F">
+                                                    <div class="rating F" data-rate="4.9">                               
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="star-wrap">
+                                                            <div class="star">
+                                                                <i class="fas fa-star"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p class="review_num">(2045)</p>                                                  
+                                                </div>
+                                                <!-- randommmmmmm -->
+                                                <div class="random_wrap F">
+                                                    <div class="review_random_id">
+                                                        <span id="randomId"></span>                                                      
+                                                    </div>
+                                                    <div class="review_random_date">
+                                                        <span id="randomNumber"></span>                                                      
+                                                    </div>  
+                                                </div>
+                                                  
                                             </div>
                                             <div class="review_second_wrap">
                                                 <p>집안 포인트 되는 의자를 찾다 화사한 핑크벨벳의자로 선택했는데~역시 굿 초이스~♡ 집안이 훨씬 화사해진듯감성적인 공간연출 하기에 만족스럽
@@ -563,7 +727,160 @@
                 </li>           
                 <li class="bestList"> 
                     <div class="bestItem R">
-                        <a href=""><img src="img/main/bestSeller/chair 1.jpg" alt="OLLSON 의자" /></a>
+                        <a href=""><img src="img/chair2.jpg" alt="OLLSON 의자" /></a>
+                        <button class="y_Btn_sm A">                  
+                            <a href="" >쇼핑하기</a>
+                        </button> 
+                                                                
+                        <div class="best_desc F">
+                            <h6>ANDRA 원목의자 아카시아</h6>
+                            <p class="price">61,000원</p>
+                            <div class="etc F">
+                                <div class="rating F" data-rate="4.9">                               
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                </div>
+                            </div>
+                            <p class="review_num">(1950)</p>  
+                            <div class="cart_wish_BtnWrapper ">
+                                <button type="button" class="wish_Btn btn ">
+                                    <i class="fa-regular fa-heart"><span class="blind">위시리스트버튼</span></i>
+                                    <i class="fa-solid fa-heart"><span class="blind">위시리스트버튼</span></i>
+                                </button>
+                                <button type="button" class="cart_Btn btn">
+                                    <i class="fa-solid fa-basket-shopping"><span class="blind">장바구니담기버튼</span></i>
+                                </button>
+                            </div>   
+                        </div>     
+                    </div>        
+                </li>
+                <li class="bestList"> 
+                    <div class="bestItem R">
+                        <a href=""><img src="img/chair3.jpg" alt="OLLSON 의자" /></a>
+                        <button class="y_Btn_sm A">                  
+                            <a href="" >쇼핑하기</a>
+                        </button> 
+                                                                
+                        <div class="best_desc F">
+                            <h6>SHENBON 의자 라탄 A형</h6>
+                            <p class="price">109,000원</p>
+                            <div class="etc F">
+                                <div class="rating F" data-rate="4.9">                               
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                </div>
+                            </div>
+                            <p class="review_num">(895)</p>  
+                            <div class="cart_wish_BtnWrapper ">
+                                <button type="button" class="wish_Btn btn ">
+                                    <i class="fa-regular fa-heart"><span class="blind">위시리스트버튼</span></i>
+                                    <i class="fa-solid fa-heart"><span class="blind">위시리스트버튼</span></i>
+                                </button>
+                                <button type="button" class="cart_Btn btn">
+                                    <i class="fa-solid fa-basket-shopping"><span class="blind">장바구니담기버튼</span></i>
+                                </button>
+                            </div>   
+                        </div>     
+                    </div>        
+                </li>
+                <li class="bestList"> 
+                    <div class="bestItem R">
+                        <a href=""><img src="img/chair4.jpg" alt="OLLSON 의자" /></a>
+                        <button class="y_Btn_sm A">                  
+                            <a href="" >쇼핑하기</a>
+                        </button> 
+                                                                
+                        <div class="best_desc F">
+                            <h6>DUHO 안락의자</h6>
+                            <p class="price">149,000원</p>
+                            <div class="etc F">
+                                <div class="rating F" data-rate="4.9">                               
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="star-wrap">
+                                        <div class="star">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                </div>
+                            </div>
+                            <p class="review_num">(750)</p>  
+                            <div class="cart_wish_BtnWrapper ">
+                                <button type="button" class="wish_Btn btn ">
+                                    <i class="fa-regular fa-heart"><span class="blind">위시리스트버튼</span></i>
+                                    <i class="fa-solid fa-heart"><span class="blind">위시리스트버튼</span></i>
+                                </button>
+                                <button type="button" class="cart_Btn btn">
+                                    <i class="fa-solid fa-basket-shopping"><span class="blind">장바구니담기버튼</span></i>
+                                </button>
+                            </div>   
+                        </div>     
+                    </div>        
+                </li>           
+                <li class="bestList"> 
+                    <div class="bestItem R">
+                        <a href=""><img src="img/chair4.jpg" alt="OLLSON 의자" /></a>
                         <button class="y_Btn_sm A">                  
                             <a href="" >쇼핑하기</a>
                         </button> 
@@ -663,6 +980,7 @@
                         </div>     
                     </div>        
                 </li>
+                
             </ul>
             
             <button type="button" class="prev_btn btn A"><i class="fa-solid fa-circle-left"><span class="blind">이전 버튼</span></i></button>    
@@ -729,13 +1047,11 @@
         <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script> -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="https:///cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-        
         <script src="js/jquery.jfMagnify.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js'></script>
-        <script src="js/common.js"></script>
-        <script src="js/detail444.js"></script>    
+        <script src="js/common03.js"></script>
+        <script src="js/detail8.js"></script>    
     </body>
     
 </html>

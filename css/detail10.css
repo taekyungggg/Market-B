@@ -177,6 +177,7 @@ body {
 }
 
 /* ------------------------------info3 */
+
 .P_info3 p {
   font-size: 1.0625rem;
   font-weight: 500;
@@ -190,6 +191,10 @@ body {
 
 .P_info3 {
   gap: 2.5rem;
+}
+.P_info3 .buy .b_opt input {
+  width: 40px;
+  text-align: center;
 }
 .P_info3 .buy .b_opt button {
   align-items: center;
@@ -206,12 +211,19 @@ body {
   font-weight: 600;
   justify-content: space-between;
 }
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 /* add */
 article .section02 {
   right: 50%;
   position: absolute;
-  margin-right: -40%;
-  /* margin-right: -42.5rem; */
+  /* margin-right: -40%; */
+  /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); */
+  margin-right: -42.5rem;
 }
 article .section02 .p_info {
   right: 10%;
@@ -219,14 +231,76 @@ article .section02 .p_info {
   background: #fff;
 }
 
+.section02 .modal {
+  display: none;
+  top: 30%;
+  z-index: 99999;
+  background: #fff;
+  border: 1px solid var(--B);
+  text-align: center;
+  color: var(--B);
+  font-size: 1rem;
+  width: 100%;
+  height: 32%;
+  padding: 1.25rem;
+  transition: all 0.3s ease-in-out;
+}
+.section02 .modal.on {
+  display: block;
+  box-shadow: 10px 11px 10px rgba(0, 0, 0, 0.7);
+}
+.section02 .modal > button,
+.section02 .modal_group > button {
+  right: 5%;
+}
+.section02 .login_alert {
+  gap: 1.625rem;
+  margin-top: 1.875rem;
+}
+.section02 .login_alert .login_btnWrap {
+  gap: 1.25rem;
+  justify-content: center;
+  margin-top: 0.625rem;
+}
+
+.login_btnWrap a {
+  background: var(--B);
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  padding: 9px;
+}
+
+.section02 .modal_group {
+  display: none;
+  top: 10%;
+  z-index: 9990;
+  background: #fff;
+  border: 1px solid var(--B);
+  text-align: center;
+  color: var(--B);
+  font-size: 1rem;
+  width: 100%;
+  height: 30%;
+  padding: 1rem 2.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+}
+.section02 .modal_group.on {
+  display: block;
+  box-shadow: 10px 11px 10px rgba(0, 0, 0, 0.7);
+}
+.section02 .modal_group .login_alert {
+  gap: 1.625rem;
+  line-height: 1.625rem;
+}
+.section02 .modal_group .login_btnWrap {
+  gap: 1.25rem;
+  justify-content: center;
+  margin: 0;
+  width: 104%;
+}
 /* -----------------------------------section03 */
-/* --------평점, 별, 리뷰수, 설명글, 후기사진 */
-/* .sec03_line {
-  width: 79vw;
-  height: 1px;
-  background: var(--S);
-  margin-top: 20px;
-} */
+/* 평점, 별, 리뷰수, 설명글, 후기사진 */
 
 .section03 h5 button {
   font-size: 1.25rem;
@@ -256,12 +330,41 @@ article .section02 .p_info {
 .section03 .review_ave .review_num {
   font-size: 1.5rem;
 }
+/* more 버튼 관련 */
 .review01_wrap .review_photo_2ndwrap {
   gap: 1.25rem;
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
-/* .review01_wrap .review_photo_wrap {
+.review01_wrap .review_photo_3ndwrap {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+.review01_wrap .review_photo_3ndwrap.on {
+  display: block;
+  display: flex;
   gap: 1.25rem;
+}
+/* filter관련 */
+.review01_wrap .review_photo_wrap,
+.review03_wrap {
+  opacity: 1;
+  visibility: visible;
+  transition: 3s ease-in-out;
+}
+
+.review01_wrap .review_photo_wrap.hide,
+.review03_wrap.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+/* .review01_wrap .review_photo_wrap .hide,
+.review03_wrap .hide {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+.review01_wrap .review_photo_wrap,
+.review03_wrap {
+  display: block;
 } */
 
 .review01_wrap .more_btn_wrap {
@@ -276,29 +379,48 @@ article .section02 .p_info {
 .review02_wrap .opt_wrapper .review_btn_wrap {
   gap: 1rem;
 }
-.review02_wrap .opt_wrapper .review_btn_wrap .review_btn {
+.review02_wrap .opt_wrapper .review_btn_wrap .review_btn button {
   border: 1px solid var(--G);
   padding: 0.625rem;
   background-color: #fff;
+  color: var(--G);
   transition: all 0.2s ease-in-out;
 }
-.review02_wrap .opt_wrapper .review_btn_wrap .review_btn:hover {
+.review02_wrap .opt_wrapper .review_btn_wrap .review_btn button:hover {
   background-color: var(--Y);
-}
-.review02_wrap .opt_wrapper .review_btn_wrap .review_btn a:hover {
   color: var(--G);
 }
+
 .review02_wrap .opt_wrapper {
   justify-content: space-between;
 }
 .review02_wrap .opt_wrapper .form-check {
   gap: 0.5rem;
 }
+/* .review02_wrap .opt_wrapper .review_text {
+  gap: 0.5rem;
+} */
+
 /* ---리뷰리스트 */
 .review03_wrap .review_03_ul {
   gap: 0.125rem;
 }
-.review03_wrap .review_03_ul li {
+.review03_wrap .ul_02 {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+.review03_wrap .ul_02 .on {
+  display: block;
+}
+.review03_wrap .ul_03 {
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+.review03_wrap .ul_03 .on {
+  display: block;
+}
+/*  */
+.review03_wrap .review_03_ul .review_first_wrap {
   border-top: 1px solid var(--Gg);
   padding-top: 1rem;
 }
@@ -416,7 +538,6 @@ h3 {
 }
 .custom-slide {
   padding: 15px 5px 0 5px;
-
   height: 100px;
   object-fit: cover;
   box-shadow: 5px 5px 5px #dedede76;
@@ -536,6 +657,7 @@ button:focus,
   background-color: var(--Y);
   color: var(--B);
 }
+
 .slider_wrapper button:hover,
 .slider_wrapper button:focus,
 .P_info2 .color button:hover,
@@ -547,8 +669,22 @@ button:focus,
   color: var(--B);
 }
 .P_info2 .color button,
-.P_info2 .c_img button {
+.P_info2 .c_img button,
+.section02 .modal button:hover,
+.section02 .modal button:focus,
+.section02 .modal button,
+.section02 .modal_group button:hover,
+.section02 .modal_group button:focus,
+.section02 .modal_group button {
   background-color: transparent;
   color: var(--B);
   padding: 0;
+}
+.y_Btn2 .btn_shop {
+  color: var(--B);
+}
+
+a.link {
+  pointer-events: none; /*이벤트를 막음*/
+  cursor: default; /*마우스 커서를 포인트에서 디폴트로 변경*/
 }

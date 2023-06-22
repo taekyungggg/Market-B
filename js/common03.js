@@ -1,5 +1,11 @@
-$(function () {
+$(document).ready(function () {
   /* nav */
+  $(".menu_btn").click(function () {
+    $(".category_list").show();
+  });
+  $(".category_list").mouseleave(function () {
+    $(".category_list").hide();
+  });
 
   /* btn top */
   let all_height = $("body, html").innerHeight();
@@ -17,7 +23,6 @@ $(function () {
     if (contentHeight <= 0) {
       return 100;
     }
-
     return ((scr_offset + windowHeight) / contentHeight) * 100;
   }
 
@@ -44,7 +49,7 @@ $(function () {
     scr_offset = $(window).scrollTop();
     scrPercent = calculateScrPercent(); // 스크롤 위치가 변경될 때마다 scrPercent 값을 업데이트합니다.
     btnTopPosition();
-    console.log(scrPercent);
+    // console.log(scrPercent);
   });
 
   btnTop.click((e) => {
@@ -62,6 +67,29 @@ $(function () {
       scrPercent = calculateScrPercent(); // 창 크기가 변경될 때마다 scrPercent 값을 업데이트합니다.
       btnTopPosition();
     }, 500);
+  });
+
+  //star rating
+  let rating = $(".rating");
+  rating.each(function () {
+    let $this = $(this);
+    let scoreNum = $this.attr("data-rate");
+    let scoreArr = scoreNum.split(".");
+    console.log(scoreArr);
+    if (scoreArr.length > 1) {
+      for (let i = 0; i < scoreArr[0]; i++) {
+        $this.find(".star-wrap").eq(i).find(".star").css({ width: "100%" });
+      }
+      $this
+        .find(".star-wrap")
+        .eq(scoreArr[0])
+        .find(".star")
+        .css({ width: scoreArr[1] + "0%" });
+    } else {
+      for (let i = 0; i < scoreNum; i++) {
+        $this.find(".star-wrap").eq(i).find(".star").css({ width: "100%" });
+      }
+    }
   });
 
   //상품 슬라이드

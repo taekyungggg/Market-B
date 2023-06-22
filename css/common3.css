@@ -219,6 +219,7 @@ header {
   text-align: left;
   background-color: #fff;
   border: 1px solid #504f4f;
+  margin-top: 10px;
 }
 
 .category_list li {
@@ -368,6 +369,10 @@ h3 {
 .rating .star i {
   color: var(--Y);
 }
+.rating .star {
+  width: 0;
+  overflow: hidden;
+}
 .etc {
   justify-content: center;
   width: 110%;
@@ -377,23 +382,14 @@ h3 {
   width: 37%;
 }
 .best_desc .review_num {
-  width: 20%;
+  width: 15%;
 }
 .best_desc .cart_wish_BtnWrapper {
   width: 40%;
 }
-/* .etc_num {
-  width: 15%;
+nav ul {
+  margin-left: 0 !important;
 }
-.review_num {
-  width: 15%;
-}
-.cart_wish_BtnWrapper {
-  width: 30%;
-}
-.cart_wish_BtnWrapper button {
-  width: 27%;
-} */
 
 /* click event */
 .wish_Btn i:last-child {
@@ -415,6 +411,13 @@ h3 {
 
 .cart_Btn.on i {
   color: var(--Y);
+}
+/* hover */
+.cart_wish_BtnWrapper .wish_Btn::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 0%;
 }
 
 /* ---------------------------------------footer */
@@ -483,4 +486,11 @@ footer .f_wrapper02 > ul {
 .f_wrapper02 .sns_wrapper i {
   font-size: 1.5rem;
   color: var(--G);
+}
+/*  */
+.mainNAV .gnb_btns > button:hover,
+.mainNAV .gnb_btns > button:focus,
+.mainNAV .gnb_btns > button {
+  background-color: transparent;
+  color: var(--B);
 }

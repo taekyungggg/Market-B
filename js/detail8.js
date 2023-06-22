@@ -29,70 +29,42 @@ $(document).ready(function () {
   $(".magnify").jfMagnify({ scale: "2.5" });
 
   //scroll fix event
-  //   $(window).on("scroll", function () {
-  //     const fix_item = $(".section02 .p_info");
-  //     function fixAside() {
-  //       const sct = $(window).scrollTop();
-  //       baseTop = 0;
+  let buyfixed = $("article .section02");
+  let buyfixedOST = buyfixed.offset().top;
+  let recOst = $(".slider_wrapper").offset().top;
+  //   let buyfixedThreshold = buyfixedOST;
+  //   console.log(buyfixedThreshold);
+  console.log(buyfixedOST);
 
-  //       if (sct > 300) {
-  //         fix_item.css({
-  //           position: "fixed",
-  //           top: 0,
-  //         });
-  //       } else {
-  //         fix_item.css({
-  //           position: "absolute",
-  //           top: 200,
-  //         });
-  //       }
-  //       console.log(sct);
-  //     }
-  //     fixAside();
-  //   });
-  //   let fix_item = $(".section02 .p_info");
-  //   let sct = $(window).scrollTop();
-  //   function fixAside() {
-  //     baseTop = 0;
-
-  //     if (sct > 50) {
-  //       fix_item.css({
-  //         position: "fixed",
-  //         top: 0,
-  //       });
-  //     } else {
-  //       fix_item.css({
-  //         position: "absolute",
-  //         top: 200,
-  //       });
-  //     }
-  //   }
-  //   console.log(sct);
-
-  //   $(window).on("scroll", function () {
-  //     fixAside();
-  //   });
-
-  $(window).on("scroll", function () {
-    let fix_item = $(".section02");
-    let sct = $("body").scrollTop();
-    let fix_itemOffset = fix_item.offset().top;
-
-    if (sct > 300) {
-      fix_item.css({
+  $(window).scroll(function () {
+    console.log($(this).scrollTop());
+    console.log(buyfixedOST);
+    //|| $(this).scrollTop() >= recOst
+    if ($(this).scrollTop() > buyfixedOST) {
+      buyfixed.css({
         position: "fixed",
-        top: 0,
+        top: "2%",
+        // right: "50%",
+        // margin-right: -40%;
+        // marginRight: "-778px",
+        zIndex: 100,
       });
-    } else {
-      fix_item.css({
-        position: "absolute",
-        // top: 200,
-      });
+      if ($(this).scrollTop() >= recOst) {
+        buyfixed.css({
+          position: "absolute",
+          top: "2%",
+          zIndex: 100,
+        });
+      } else {
+        buyfixed.css({
+          position: "absolute",
+          // right: "50%",
+          // margin-right: -40%;
+          // marginRight: "-670px",
+        });
+      }
     }
-    //sct값이 계속 0으로 나옴.
-    console.log(sct);
   });
-  $(window).trigger("scroll");
 
   //id, date random
   const userids = () => {
@@ -113,11 +85,18 @@ $(document).ready(function () {
   };
 
   const id_list = $("#randomId");
-  console.log(id_list);
+
   function make_id() {
-    id_list.html(userids());
+    id_list.html(userids);
   }
   make_id();
+  // id_list.each(function () {
+  //   make_id();
+  // });
+
+  // function make_id() {
+  //   id_list.html(userids());
+  // }
 
   const review_date = $(".review_random_date");
 
@@ -146,6 +125,7 @@ $(document).ready(function () {
 
     return {
       id: x.id,
+      userID: userids(),
       timestamp: `${year}-${month}-${day}`,
     };
   });
@@ -200,37 +180,71 @@ $(document).ready(function () {
         moveSlide(currentIdx - 1);
       }
     });
-
-    // prevBtn.on("click", function () {
-    //   if (currentIdx === 0) {
-    //     moveSlide(0);
-    //   } else {
-    //     moveSlide(currentIdx - 1);
-    //   }
-    // });
   });
 
-  //구입갯수
-  let minus = $(".b_opt > .fa-minus"),
-    plus = $(".b_opt > .fa-plus"),
-    buy_num = $(".b_opt > .num");
+  //구입갯수, 최종구입가
+  let btn_minus = $(".b_opt > .minus"),
+    btn_plus = $(".b_opt > .plus"),
+    buy_num = $(".b_opt > .buyResult"),
+    totalcost = $(".totalcost"), //html에 넣어주기
+    buy_priceText = $(".P_info1 .price").text(),
+    buy_price = buy_priceText.replace(/\D/g, ""),
+    i = 1;
 
-  minus.click(function () {
-    let currentNum = parseInt(buy_num.text());
-    if (currentNum > 1) {
-      buy_num.text(currentNum - 1);
+  btn_plus.on("click", function () {
+    i++;
+    buy_num.text(i);
+    buyTotal = i * buy_price;
+    totalcost.text("￦" + buyTotal.toLocaleString());
+  });
+
+  btn_minus.on("click", function () {
+    if (i > 1) {
+      i--;
+      buy_num.text(i);
+      buyTotal = i * buy_price;
+      totalcost.text("￦" + buyTotal.toLocaleString());
     }
   });
 
-  plus.click(function () {
-    var currentNum = parseInt(buy_num.text());
-    buy_num.text(currentNum + 1);
-  });
-  console.log(buy_num);
+  //컬러 선택
+  let opt1_btn = $(".P_info2 .color .btn_opt1");
+  let opt2_btn = $(".P_info2 .color .btn_opt2");
+  let opt1_btnImg = $(".P_info2 .btn_opt1_img");
+  let opt2_btnImg = $(".P_info2 .btn_opt2_img");
 
-  //foundation css (button) remove
-  let moreBtn = $(".review_photo_wrap .more_btn_wrap button");
-  moreBtn.removeClass("is-active");
-  moreBtn.removeClass("disabled");
-  moreBtn.removeClass("loading");
+  opt1_btn.click(function () {
+    if ($(this).hasClass("on")) {
+      $(this).removeClass("on");
+      opt1_btnImg.removeClass("on");
+    } else {
+      $(this).addClass("on");
+      opt1_btnImg.addClass("on");
+      opt2_btnImg.removeClass("on");
+      opt2_btn.removeClass("on");
+    }
+  });
+  opt2_btn.click(function () {
+    if ($(this).hasClass("on")) {
+      $(this).removeClass("on");
+      opt2_btnImg.removeClass("on");
+    } else {
+      $(this).addClass("on");
+      opt2_btnImg.addClass("on");
+      opt1_btnImg.removeClass("on");
+      opt1_btn.removeClass("on");
+    }
+  });
+
+  //후기 옵션 선택
+  //   let textCheck = $(".opt_wrapper .review_text");
+  //   let photoCheck = $(".opt_wrapper .review_photo");
+
+  //   textCheck.click(function () {
+  //     if ($(this).hasClass("checked")) {
+  //       photoCheck.removeClass("checked");
+  //     } else {
+  //       photoCheck.addClass("checked");
+  //     }
+  //   });
 });
